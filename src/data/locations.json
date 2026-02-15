@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "concepcion",
+    "name": "Concepción",
+    "region": "Biobío",
+    "description": "Centro de operaciones de Exportandes. Retiro a domicilio en toda la comuna.",
+    "metaTitle": "Vender Chatarra en Concepción | Exportandes",
+    "metaDescription": "Vendé tu cobre, aluminio y chatarra en Concepción al mejor precio. Retiro gratis, pago inmediato. Cotiza por WhatsApp.",
+    "keywords": ["vender cobre Concepción", "chatarra Concepción", "precio aluminio Concepción"]
+  },
+  {
+    "slug": "talcahuano",
+    "name": "Talcahuano",
+    "region": "Biobío",
+    "description": "Servicio de retiro en Talcahuano, San Vicente y zonas portuarias.",
+    "metaTitle": "Vender Chatarra en Talcahuano | Exportandes",
+    "metaDescription": "Compramos chatarra de cobre y aluminio en Talcahuano. Retiro sin costo, pesaje certificado.",
+    "keywords": ["vender chatarra Talcahuano", "cobre Talcahuano", "aluminio Talcahuano"]
+  },
+  {
+    "slug": "san-pedro-de-la-paz",
+    "name": "San Pedro de la Paz",
+    "region": "Biobío",
+    "description": "Cobertura completa en San Pedro de la Paz. Agenda tu retiro hoy.",
+    "metaTitle": "Vender Chatarra en San Pedro de la Paz | Exportandes",
+    "metaDescription": "Vende tu chatarra en San Pedro de la Paz. Mejor precio por kilo de cobre y aluminio. Retiro gratis.",
+    "keywords": ["chatarra San Pedro de la Paz", "vender cobre San Pedro"]
+  },
+  {
+    "slug": "chillan",
+    "name": "Chillán",
+    "region": "Ñuble",
+    "description": "Atendemos Chillán y toda la región de Ñuble con retiro programado.",
+    "metaTitle": "Vender Chatarra en Chillán | Exportandes",
+    "metaDescription": "Compramos cobre, aluminio y chatarra en Chillán. Precio justo, pago al contado.",
+    "keywords": ["chatarra Chillán", "vender cobre Chillán", "aluminio Chillán"]
+  },
+  {
+    "slug": "los-angeles",
+    "name": "Los Ángeles",
+    "region": "Biobío",
+    "description": "Servicio de compra y retiro de metales en Los Ángeles y alrededores.",
+    "metaTitle": "Vender Chatarra en Los Ángeles | Exportandes",
+    "metaDescription": "Vende chatarra en Los Ángeles, Biobío. Compramos cobre, aluminio, bronce y más.",
+    "keywords": ["chatarra Los Ángeles", "vender metales Los Ángeles"]
+  },
+  {
+    "slug": "coronel",
+    "name": "Coronel",
+    "region": "Biobío",
+    "description": "Cobertura de retiro en Coronel y Lota. Agenda tu visita.",
+    "metaTitle": "Vender Chatarra en Coronel | Exportandes",
+    "metaDescription": "Compramos chatarra de cobre, aluminio y metales en Coronel. Retiro a domicilio gratuito.",
+    "keywords": ["chatarra Coronel", "vender cobre Coronel", "metales Coronel"]
+  }
+]

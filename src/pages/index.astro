@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import PriceTable from "@/components/PriceTable.astro";
+import TrustSection from "@/components/TrustSection.astro";
+import ProcessTimeline from "@/components/ProcessTimeline.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+---
+
+<Layout
+  seo={{
+    title: "Exportandes — Vende tu Chatarra al Mejor Precio | Concepción & Biobío",
+    description: "Compramos cobre, aluminio y chatarra al mejor precio en Concepción y Biobío. Retiro gratis, pago inmediato. Cotiza por WhatsApp.",
+    keywords: [
+      "vender chatarra Concepción",
+      "vender cobre Concepción",
+      "precio aluminio Biobío",
+      "compra chatarra Biobío",
+      "reciclaje metales Concepción",
+    ],
+  }}
+>
+  <!-- Hero -->
+  <Hero
+    title="Vendemos tu chatarra al mejor precio."
+    subtitle="Especialistas en aluminio y cobre — Concepción y Biobío. Retiro gratis y pago al instante."
+    ctaText="Cotizar ahora"
+    ctaHref="/vender"
+    image="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80&auto=format"
+  />
+
+  <!-- Price Table -->
+  <PriceTable />
+
+  <!-- Trust / Benefits -->
+  <TrustSection />
+
+  <!-- Process Timeline -->
+  <ProcessTimeline />
+
+  <!-- Final CTA -->
+  <SectionCTA />
+</Layout>

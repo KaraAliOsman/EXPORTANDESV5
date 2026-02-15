@@ -1,0 +1,130 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import locations from "@/data/locations.json";
+import prices from "@/data/prices.json";
+import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
+import { getLocalBusinessSchema } from "@/utils/seo";
+
+export function getStaticPaths() {
+  return locations.map((loc) => ({
+    params: { slug: loc.slug },
+    props: { location: loc },
+  }));
+}
+
+interface Location {
+  slug: string;
+  name: string;
+  region: string;
+  description: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+}
+
+interface Price {
+  id: string;
+  name: string;
+  price: number;
+  unit: string;
+  trend: string;
+  description: string;
+}
+
+interface Props {
+  location: Location;
+}
+
+const { location } = Astro.props;
+---
+
+<Layout
+  seo={{
+    title: location.metaTitle,
+    description: location.metaDescription,
+    keywords: location.keywords,
+    canonical: `/vender-chatarra-${location.slug}`,
+  }}
+  schema={getLocalBusinessSchema()}
+>
+  <!-- Hero: full-screen background -->
+  <section class="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=60&auto=format"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent" />
+      <div class="absolute inset-0 bg-slate-950/40" />
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-16">
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
+        Vender chatarra en {location.name}
+      </h1>
+      <p class="mt-6 text-xl text-brand-ice/90 max-w-2xl mx-auto">
+        {location.description}
+      </p>
+      <div class="mt-10">
+        <a
+          href="/vender"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-bold text-lg rounded-full hover:bg-brand-blue/90 transition-all duration-200 hover:scale-[1.02] shadow-xl"
+        >
+          Cotizar ahora
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price listing: glass cards with WhatsApp links -->
+  <section class="relative py-24 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white text-center mb-12">
+        Precios vigentes en {location.name}
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {prices.map((item: Price) => {
+          const trend = getTrendIcon(item.trend);
+          const waLink = createWhatsAppLink(item.name, "", location.name);
+          return (
+            <div
+              class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] transition-all duration-300"
+            >
+              <div class="flex items-start justify-between gap-2 mb-3">
+                <h3 class="font-display font-bold text-lg text-white">{item.name}</h3>
+                <span class={`text-sm font-medium ${trend.color}`} title={trend.label}>
+                  {trend.icon}
+                </span>
+              </div>
+              <p class="text-brand-ice/70 text-sm mb-4 line-clamp-2">{item.description}</p>
+              <p class="text-2xl font-display font-extrabold text-brand-green mb-4">
+                {formatPrice(item.price)}
+                <span class="text-base font-normal text-slate-400">/{item.unit}</span>
+              </p>
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 w-full justify-center px-4 py-3 bg-brand-green/20 border border-brand-green/30 text-brand-green font-semibold rounded-xl hover:bg-brand-green/30 transition-colors"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                </svg>
+                Cotizar por WhatsApp
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

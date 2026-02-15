@@ -1,0 +1,102 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+---
+
+<Layout
+  seo={{
+    title: "Chatarra electrónica: ¿Qué se puede vender y a cuánto? | Exportandes",
+    description: "Guía sobre chatarra electrónica: qué componentes tienen valor, metales recuperables (cobre, aluminio, oro) y precios aproximados para vender e-waste en Chile.",
+    keywords: ["chatarra electrónica", "e-waste reciclaje", "metales en electrónicos", "vender chatarra electrónica", "oro en conectores"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-32 pb-16 min-h-screen bg-slate-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Back link -->
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-brand-blue transition-colors mb-8"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <!-- Hero image -->
+      <div class="relative rounded-2xl overflow-hidden mb-10">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format"
+          alt="Componentes electrónicos y chatarra tecnológica"
+          class="w-full h-64 sm:h-80 object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+      </div>
+
+      <!-- Article content -->
+      <article class="prose prose-invert max-w-none">
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-6">
+          Chatarra electrónica: ¿Qué se puede vender y a cuánto?
+        </h1>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          Los aparatos electrónicos que ya no usas —computadores, TVs, impresoras, cables— contienen metales valiosos que pueden recuperarse y venderse. Conocer qué tiene valor y cómo clasificarlo te permite dar una segunda vida a la chatarra tecnológica y, de paso, contribuir al reciclaje responsable.
+        </p>
+
+        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+          Metales que puedes recuperar del e-waste
+        </h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          Los dispositivos electrónicos incorporan varios metales. Estos son los más comunes y con mejor mercado:
+        </p>
+        <ul class="text-slate-300 space-y-2 mb-6 list-disc pl-6">
+          <li><strong class="text-white">Cobre:</strong> presente en cables, transformadores, bobinas y placas. Es el metal más abundante y con mayor demanda.</li>
+          <li><strong class="text-white">Aluminio:</strong> disipadores de calor, carcasas, marcos. Fácil de identificar por su peso ligero.</li>
+          <li><strong class="text-white">Oro:</strong> en conectores, pins y algunos circuitos. Cantidades pequeñas pero de alto valor.</li>
+          <li><strong class="text-white">Plata y estaño:</strong> en soldaduras y componentes específicos. Suele procesarse junto con otros metales.</li>
+        </ul>
+
+        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+          ¿Qué componentes vale la pena vender?
+        </h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          No todo el e-waste se compra por igual. Los compradores de chatarra suelen preferir materiales ya separados. Lo más cotizado incluye:
+        </p>
+        <ul class="text-slate-300 space-y-2 mb-6 list-disc pl-6">
+          <li>Cables de cobre (pelados o mixtos)</li>
+          <li>Disipadores y heatsinks de aluminio</li>
+          <li>Transformadores y motores (por el cobre)</li>
+          <li>Placas base sin componentes (en algunos casos)</li>
+          <li>Fuentes de poder (contienen cobre y aluminio)</li>
+        </ul>
+
+        <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 my-8">
+          <h3 class="font-display font-bold text-lg text-white mb-3">
+            Valores orientativos por tipo de material
+          </h3>
+          <p class="text-slate-300 mb-2">
+            Los precios dependen del mercado del día. Como referencia: cable de cobre mixto ronda <span class="text-brand-green font-semibold">$5.500-6.000/kg</span>, cobre pelado puede superar <span class="text-brand-green font-semibold">$7.000/kg</span>, aluminio de disipadores <span class="text-brand-green font-semibold">$1.200-1.500/kg</span>. El oro en conectores se paga por gramo y requiere compradores especializados.
+          </p>
+        </div>
+
+        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+          Importancia ambiental del reciclaje electrónico
+        </h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          La chatarra electrónica contiene sustancias tóxicas (plomo, mercurio, retardantes) que no deben ir a vertederos. Al vender tus equipos a un comprador responsable, evitas que terminen contaminando y facilitas la recuperación de metales, reduciendo la necesidad de minería nueva.
+        </p>
+
+        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+          Dónde vender chatarra electrónica
+        </h2>
+        <p class="text-slate-300 leading-relaxed mb-6">
+          En <strong class="text-brand-blue">Exportandes</strong> compramos cobre y aluminio recuperados de equipos electrónicos. Si tienes cables, disipadores o transformadores, puedes <a href="/vender" class="text-brand-blue hover:text-brand-green underline transition-colors font-medium">cotizar en nuestra página de venta</a> y te responderemos con una estimación basada en el material que tengas. Operamos en Concepción y región del Biobío con pesaje transparente y pago inmediato.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

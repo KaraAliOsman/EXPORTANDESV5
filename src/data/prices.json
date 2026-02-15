@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cobre-pelado",
+    "name": "Cobre (Cable Pelado)",
+    "price": 7200,
+    "unit": "kg",
+    "trend": "up",
+    "description": "Cable de cobre limpio, sin aislante ni recubrimiento."
+  },
+  {
+    "id": "cobre-mixto",
+    "name": "Cobre Mixto",
+    "price": 5800,
+    "unit": "kg",
+    "trend": "stable",
+    "description": "Cobre mezclado con aislante plástico o residuos menores."
+  },
+  {
+    "id": "aluminio-perfil",
+    "name": "Perfil de Aluminio",
+    "price": 1900,
+    "unit": "kg",
+    "trend": "stable",
+    "description": "Perfiles de aluminio limpios de ventanas, puertas o estructuras."
+  },
+  {
+    "id": "aluminio-lata",
+    "name": "Aluminio (Latas)",
+    "price": 850,
+    "unit": "kg",
+    "trend": "up",
+    "description": "Latas de bebida compactadas o sueltas."
+  },
+  {
+    "id": "laton",
+    "name": "Latón",
+    "price": 3100,
+    "unit": "kg",
+    "trend": "down",
+    "description": "Llaves, grifería, válvulas y piezas de latón."
+  },
+  {
+    "id": "bronce",
+    "name": "Bronce",
+    "price": 4200,
+    "unit": "kg",
+    "trend": "up",
+    "description": "Piezas de bronce industrial, campanas, estatuas."
+  },
+  {
+    "id": "acero-inoxidable",
+    "name": "Acero Inoxidable",
+    "price": 950,
+    "unit": "kg",
+    "trend": "stable",
+    "description": "Ollas, barras, láminas de acero inoxidable."
+  },
+  {
+    "id": "hierro",
+    "name": "Fierro / Hierro",
+    "price": 120,
+    "unit": "kg",
+    "trend": "down",
+    "description": "Chatarra ferrosa general: vigas, fierro de construcción."
+  }
+]

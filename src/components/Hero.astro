@@ -1,0 +1,125 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText?: string;
+  ctaHref?: string;
+  image?: string;
+  overlay?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText = "Cotizar ahora",
+  ctaHref = "/vender",
+  image = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80&auto=format",
+  overlay = true,
+} = Astro.props;
+---
+
+<section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
+  <!-- Background image with parallax -->
+  <div class="absolute inset-0" id="hero-parallax">
+    <img
+      src={image}
+      alt="Industrial metal recycling warehouse"
+      class="w-full h-[120%] object-cover object-center -mt-[10%]"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+
+  <!-- Overlay gradients -->
+  {overlay && (
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-950/40"></div>
+  )}
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-transparent to-transparent"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
+    <div class="max-w-3xl">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full backdrop-blur-md bg-white/5 border border-white/10 text-sm text-brand-ice animate-fade-in">
+        <span class="w-2 h-2 bg-brand-green rounded-full animate-pulse"></span>
+        Concepción &amp; Biobío — Retiro a domicilio
+      </div>
+
+      <!-- H1 -->
+      <h1
+        class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight animate-slide-up"
+      >
+        {title}
+      </h1>
+
+      <!-- Subtitle -->
+      <p
+        class="mt-6 text-lg sm:text-xl text-brand-ice/80 max-w-xl leading-relaxed animate-slide-up"
+        style="animation-delay: 0.1s;"
+      >
+        {subtitle}
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-start gap-4 animate-slide-up" style="animation-delay: 0.2s;">
+        <a
+          href={ctaHref}
+          class="inline-flex items-center gap-2 px-8 py-4 bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold text-lg rounded-full transition-all duration-200 hover:shadow-2xl hover:shadow-brand-blue/30 hover:scale-[1.02]"
+        >
+          {ctaText}
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+        <a
+          href="/tarifas"
+          class="inline-flex items-center gap-2 px-8 py-4 backdrop-blur-md bg-white/5 border border-white/10 text-white font-medium text-lg rounded-full hover:bg-white/10 transition-all duration-200"
+        >
+          Ver tarifas
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="mt-12 flex flex-wrap items-center gap-6 text-sm text-slate-400 animate-fade-in" style="animation-delay: 0.4s;">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Pago inmediato
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Retiro gratis
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Pesaje certificado
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+    </svg>
+  </div>
+</section>
+
+<script>
+  // Subtle parallax on scroll
+  const parallax = document.getElementById("hero-parallax");
+  if (parallax && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+      }
+    }, { passive: true });
+  }
+</script>

@@ -1,0 +1,95 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import prices from "@/data/prices.json";
+import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
+import { getProductSchema } from "@/utils/seo";
+import SectionCTA from "@/components/SectionCTA.astro";
+
+const productSchemas = prices.map((p) =>
+  getProductSchema(p.name, p.price, p.description)
+);
+---
+
+<Layout
+  seo={{
+    title: "Tarifas y Precios por Kilo — Cobre, Aluminio, Chatarra | Exportandes",
+    description: "Consulta nuestras tarifas actualizadas. Precio por kilo de cobre, aluminio, latón, bronce y más en Concepción y Biobío.",
+    keywords: [
+      "precio cobre kilo Chile",
+      "precio aluminio kilo",
+      "tarifa chatarra Concepción",
+      "precio bronce kilo",
+    ],
+  }}
+  schema={productSchemas as unknown as Record<string, unknown>}
+>
+  <!-- Header -->
+  <section class="relative pt-32 pb-16">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=40&auto=format"
+        alt=""
+        class="w-full h-full object-cover opacity-15"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white">
+        Tarifas actualizadas
+      </h1>
+      <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
+        Precios referenciales por kilo. Cotización final sujeta a inspección y calidad del material.
+      </p>
+    </div>
+  </section>
+
+  <!-- Full price listing -->
+  <section class="relative pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {prices.map((item) => {
+          const trend = getTrendIcon(item.trend);
+          const waLink = createWhatsAppLink(item.name, "", "Concepción");
+          return (
+            <div class="group backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.07] hover:border-white/15 transition-all duration-300">
+              <!-- Header -->
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h2 class="font-display font-bold text-xl text-white">{item.name}</h2>
+                  <p class="text-sm text-slate-400 mt-1">{item.description}</p>
+                </div>
+                <span class:list={["inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium", trend.color, "bg-white/5"]}>
+                  {trend.icon} {trend.label}
+                </span>
+              </div>
+
+              <!-- Price -->
+              <div class="flex items-baseline gap-1 mb-6">
+                <span class="text-4xl font-extrabold text-white tabular-nums">
+                  {formatPrice(item.price)}
+                </span>
+                <span class="text-lg text-slate-400">/{item.unit}</span>
+              </div>
+
+              <!-- CTA -->
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 w-full px-5 py-3 bg-brand-green/10 border border-brand-green/20 text-brand-green hover:bg-brand-green hover:text-white font-semibold text-sm rounded-xl transition-all duration-200"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                </svg>
+                Cotizar venta
+              </a>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>
