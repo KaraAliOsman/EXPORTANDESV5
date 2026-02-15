@@ -3,7 +3,8 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://exportandes.cl',
+  site: 'https://karaaliosman.github.io',
+  base: '/EXPORTANDESV5',
   output: 'static',
   integrations: [
     tailwind(),
