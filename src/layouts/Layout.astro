@@ -1,6 +1,7 @@
 ---
 import { SITE, getLocalBusinessSchema } from "@/utils/seo";
 import type { SEOProps } from "@/utils/seo";
+import { asset } from "@/utils/paths";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
 import FloatingCTA from "@/components/FloatingCTA.astro";
@@ -23,26 +24,15 @@ const ogImage = seo.ogImage ?? `${SITE.url}/og-image.jpg`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- Primary Meta -->
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     {seo.keywords && <meta name="keywords" content={seo.keywords.join(", ")} />}
     {seo.noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL.href} />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Fonts -->
+    <link rel="icon" type="image/svg+xml" href={asset("favicon.svg")} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Open Graph -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
     <meta property="og:type" content={seo.ogType ?? "website"} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:title" content={seo.title} />
@@ -50,75 +40,39 @@ const ogImage = seo.ogImage ?? `${SITE.url}/og-image.jpg`;
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="es_CL" />
     <meta property="og:site_name" content={SITE.name} />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
     <meta name="twitter:image" content={ogImage} />
-
-    <!-- Schema: LocalBusiness (global) -->
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(getLocalBusinessSchema())}
-    />
-    <!-- Schema: Page-specific -->
-    {schema && (
-      <script
-        type="application/ld+json"
-        set:html={JSON.stringify(schema)}
-      />
-    )}
+    <script type="application/ld+json" set:html={JSON.stringify(getLocalBusinessSchema())} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   </head>
-  <body class="min-h-screen bg-slate-950 text-white font-sans antialiased selection:bg-brand-blue/30 selection:text-white">
+  <body class="min-h-screen bg-[#0a0a0a] text-white font-sans antialiased selection:bg-white/20 selection:text-white overflow-x-hidden">
     <Navbar />
-    <main>
-      <slot />
-    </main>
+    <main><slot /></main>
     <Footer />
     <FloatingCTA />
 
-    <!-- Scroll-driven Navbar glass effect -->
     <script>
       const navbar = document.getElementById("navbar");
       if (navbar) {
-        const handleScroll = () => {
-          if (window.scrollY > 60) {
-            navbar.classList.add("navbar-glass");
-          } else {
-            navbar.classList.remove("navbar-glass");
-          }
-        };
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll();
+        const h = () => navbar.classList.toggle("navbar-scrolled", window.scrollY > 40);
+        window.addEventListener("scroll", h, { passive: true });
+        h();
       }
     </script>
 
     <style is:global>
-      .navbar-glass {
-        background: rgba(15, 23, 42, 0.85) !important;
-        backdrop-filter: blur(16px) !important;
-        -webkit-backdrop-filter: blur(16px) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      .navbar-scrolled {
+        background: rgba(10, 10, 10, 0.92) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
       }
-      /* Smooth scroll offset for fixed navbar */
-      html {
-        scroll-padding-top: 5rem;
-      }
-      /* Scrollbar styling */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
-      }
+      html { scroll-padding-top: 5rem; }
+      * { -webkit-tap-highlight-color: transparent; }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #0a0a0a; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
     </style>
   </body>
 </html>

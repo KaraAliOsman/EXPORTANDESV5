@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
 ---
 
 <Layout
@@ -16,7 +17,7 @@ import SectionCTA from "@/components/SectionCTA.astro";
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Back link -->
       <a
-        href="/blog"
+        href={url("blog")}
         class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-brand-blue transition-colors mb-8"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -93,7 +94,7 @@ import SectionCTA from "@/components/SectionCTA.astro";
           No mezcles para vender
         </h2>
         <p class="text-slate-300 leading-relaxed mb-6">
-          Cada metal se paga a un precio distinto. Si los mezclas, el comprador tendrá que clasificarlos y probablemente te ofrecerá un precio promedio más bajo. Separa cobre, bronce y latón antes de llevar tu chatarra. En <strong class="text-brand-blue">Exportandes</strong> compramos los tres metales en Concepción. Si tienes dudas sobre la clasificación, puedes <a href="/vender" class="text-brand-blue hover:text-brand-green underline transition-colors font-medium">contactarnos para una cotización</a> y te orientamos según el material que tengas.
+          Cada metal se paga a un precio distinto. Si los mezclas, el comprador tendrá que clasificarlos y probablemente te ofrecerá un precio promedio más bajo. Separa cobre, bronce y latón antes de llevar tu chatarra. En <strong class="text-brand-blue">Exportandes</strong> compramos los tres metales en Concepción. Si tienes dudas sobre la clasificación, puedes <a href={url("vender")} class="text-brand-blue hover:text-brand-green underline transition-colors font-medium">contactarnos para una cotización</a> y te orientamos según el material que tengas.
         </p>
       </article>
     </div>

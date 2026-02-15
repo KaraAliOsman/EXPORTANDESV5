@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
 import priceData from "@/data/prices.json";
 import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
+import { url } from "@/utils/paths";
 
 const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.category === "bronce");
 ---
@@ -15,90 +16,102 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
   }}
 >
   <!-- Hero -->
-  <section class="relative pt-28 sm:pt-32 pb-12">
+  <section class="relative min-h-[60vh] flex items-end">
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1920&q=40&auto=format"
-        alt=""
+        src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1920&q=70&auto=format"
+        alt="Bronce industrial"
         class="w-full h-full object-cover"
         loading="eager"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950"></div>
+      <div class="absolute inset-0 bg-[#0a0a0a]/70"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+    <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">Materiales</p>
+      <h1 class="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white">
         Precio del Bronce
       </h1>
-      <p class="mt-4 sm:mt-6 text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">
+      <p class="mt-4 sm:mt-6 text-base sm:text-lg text-white/50 max-w-2xl">
         Precios referenciales por kilo. Cotización final sujeta a inspección y calidad del material.
       </p>
     </div>
   </section>
 
   <!-- Price table -->
-  <section class="relative pb-12 sm:pb-16">
+  <section class="relative py-16 sm:py-24 bg-[#0a0a0a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="backdrop-blur-md bg-white/[0.03] border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-        <div class="hidden md:grid md:grid-cols-12 gap-4 px-6 py-3 bg-white/[0.03] border-b border-white/5 text-xs font-semibold tracking-widest uppercase text-slate-400">
-          <div class="col-span-3">Material</div>
-          <div class="col-span-3">Detalle</div>
-          <div class="col-span-2 text-right">Precio/kg</div>
-          <div class="col-span-1 text-center">Tend.</div>
-          <div class="col-span-3 text-right">Acción</div>
-        </div>
-
-        {items.map((item, index) => {
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">Tarifas</p>
+      <h2 class="font-sans font-black text-2xl sm:text-3xl text-white mb-10">Precios por kilo</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        {items.map((item) => {
           const trend = getTrendIcon(item.trend);
           const waLink = createWhatsAppLink(item.name, "", "Concepción");
           const isConsult = "consultPrice" in item && item.consultPrice;
           return (
-            <div
-              class:list={[
-                "grid grid-cols-1 md:grid-cols-12 gap-1 md:gap-4 items-center px-4 sm:px-6 py-3.5 sm:py-4 transition-colors hover:bg-white/[0.03]",
-                index < items.length - 1 && "border-b border-white/5",
-              ]}
-            >
-              <div class="md:col-span-3">
-                <p class="font-semibold text-sm sm:text-base text-white">{item.name}</p>
-              </div>
-              <div class="md:col-span-3">
-                <p class="text-xs sm:text-sm text-slate-400">{item.description}</p>
-              </div>
-              <div class="md:col-span-2 md:text-right mt-1 md:mt-0">
+            <div class="bg-[#0a0a0a] p-6 sm:p-8 flex flex-col">
+              <p class="font-sans font-black text-lg text-white">{item.name}</p>
+              <p class="mt-2 text-sm text-white/40">{item.description}</p>
+              <div class="mt-4 flex items-center justify-between gap-4">
                 {isConsult ? (
-                  <span class="text-base sm:text-lg font-bold text-brand-blue">Consultar</span>
+                  <span class="text-base font-semibold text-white">Consultar</span>
                 ) : (
-                  <span class="text-lg sm:text-xl font-bold text-white tabular-nums">
-                    {formatPrice(item.price)}<span class="text-xs sm:text-sm text-slate-400 ml-1">/{item.unit}</span>
+                  <span class="text-xl font-black text-white tabular-nums">
+                    {formatPrice(item.price)}
+                    <span class="text-sm font-normal text-white/40 ml-1">/{item.unit}</span>
                   </span>
                 )}
+                <span class={`text-sm font-medium ${trend.color}`}>{trend.icon}</span>
               </div>
-              <div class="hidden md:block md:col-span-1 md:text-center">
-                <span class:list={["text-sm font-medium", trend.color]}>{trend.icon}</span>
-              </div>
-              <div class="md:col-span-3 md:text-right mt-2 md:mt-0">
-                <a
-                  href={waLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-brand-green/10 border border-brand-green/20 text-brand-green hover:bg-brand-green hover:text-white font-semibold text-xs sm:text-sm rounded-full transition-all duration-200"
-                >
-                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  </svg>
-                  Cotizar
-                </a>
-              </div>
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center justify-center gap-2 bg-white text-black font-semibold text-sm uppercase tracking-wide px-6 py-3 hover:bg-white/90 transition-colors"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                </svg>
+                Cotizar
+              </a>
             </div>
           );
         })}
       </div>
+      <p class="mt-6 text-xs text-white/40">Última actualización: {priceData.lastUpdated}</p>
+    </div>
+  </section>
 
-      <p class="mt-4 text-xs sm:text-sm text-slate-400">Última actualización: {priceData.lastUpdated}</p>
+  <!-- Editorial section -->
+  <section class="relative py-16 sm:py-24 bg-[#0a0a0a] border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-0 lg:gap-16 items-center">
+        <div class="order-2 lg:order-1 aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
+          <img
+            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=70&auto=format"
+            alt="Bronce y metales"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="order-1 lg:order-2 py-8 lg:py-0">
+          <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">El material</p>
+          <h2 class="font-sans font-black text-2xl sm:text-3xl text-white mb-6">Bronce: la aleación que marcó la historia</h2>
+          <p class="text-white/50 leading-relaxed mb-4">
+            El bronce — aleación de cobre y estaño — dio nombre a toda una época. Esculturas, campanas, grifería y piezas industriales aprovechan su resistencia a la corrosión y su capacidad de fundición precisa.
+          </p>
+          <p class="text-white/40 leading-relaxed">
+            Bronce colorado (mayor contenido de cobre) y bronce amarillo (con zinc) tienen distintos usos y valores. Ambos se reciclan íntegramente, conservando propiedades mecánicas y estéticas en nuevas aplicaciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Back link -->
+  <section class="py-8 bg-[#0a0a0a] border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <a
-        href="/tarifas"
-        class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-slate-400 hover:text-white transition-colors"
+        href={url("tarifas")}
+        class="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-white transition-colors"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />

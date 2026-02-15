@@ -5,6 +5,7 @@ import locations from "@/data/locations.json";
 import priceData from "@/data/prices.json";
 import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
 import { getLocalBusinessSchema } from "@/utils/seo";
+import { url } from "@/utils/paths";
 
 export function getStaticPaths() {
   return locations.map((loc) => ({
@@ -68,7 +69,7 @@ const featured = featuredIds
       </p>
       <div class="mt-8 sm:mt-10">
         <a
-          href="/vender"
+          href={url("vender")}
           class="inline-flex items-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 bg-brand-blue text-white font-bold text-base sm:text-lg rounded-full hover:bg-brand-blue/90 transition-all duration-200 hover:scale-[1.02] shadow-xl"
         >
           Cotizar ahora
@@ -122,7 +123,7 @@ const featured = featuredIds
       <!-- Ver todos los precios -->
       <div class="text-center mt-8 sm:mt-10">
         <a
-          href="/tarifas"
+          href={url("tarifas")}
           class="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 backdrop-blur-md bg-white/5 border border-white/10 text-white font-semibold text-sm sm:text-base rounded-full hover:bg-white/10 transition-all duration-200"
         >
           Ver todos los precios

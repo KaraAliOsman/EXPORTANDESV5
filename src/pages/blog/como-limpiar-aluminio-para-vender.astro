@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
 ---
 
 <Layout
@@ -16,7 +17,7 @@ import SectionCTA from "@/components/SectionCTA.astro";
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Back link -->
       <a
-        href="/blog"
+        href={url("blog")}
         class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-brand-blue transition-colors mb-8"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -87,7 +88,7 @@ import SectionCTA from "@/components/SectionCTA.astro";
           Listo para vender
         </h2>
         <p class="text-slate-300 leading-relaxed mb-6">
-          Una vez que tu aluminio está limpio y clasificado, el siguiente paso es buscar un comprador de confianza. En <strong class="text-brand-blue">Exportandes</strong> compramos aluminio en Concepción con pesaje a la vista y pago al instante. Si quieres una cotización rápida, puedes <a href="/vender" class="text-brand-blue hover:text-brand-green underline transition-colors font-medium">ingresar a nuestra página de venta</a> y enviarnos los datos de tu material por WhatsApp.
+          Una vez que tu aluminio está limpio y clasificado, el siguiente paso es buscar un comprador de confianza. En <strong class="text-brand-blue">Exportandes</strong> compramos aluminio en Concepción con pesaje a la vista y pago al instante. Si quieres una cotización rápida, puedes <a href={url("vender")} class="text-brand-blue hover:text-brand-green underline transition-colors font-medium">ingresar a nuestra página de venta</a> y enviarnos los datos de tu material por WhatsApp.
         </p>
       </article>
     </div>

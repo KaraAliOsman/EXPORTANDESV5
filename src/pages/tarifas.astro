@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import priceData from "@/data/prices.json";
 import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
 import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
 ---
 
 <Layout
@@ -140,11 +141,11 @@ import SectionCTA from "@/components/SectionCTA.astro";
       <!-- Material category links -->
       <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {[
-          { label: "Aluminio", href: "/materiales/aluminio", color: "brand-blue" },
-          { label: "Cobre", href: "/materiales/cobre", color: "brand-green" },
-          { label: "Bronce", href: "/materiales/bronce", color: "brand-blue" },
-          { label: "Acero Inoxidable", href: "/materiales/acero-inoxidable", color: "brand-ice" },
-          { label: "Fierro", href: "/materiales/fierro", color: "brand-ice" },
+          { label: "Aluminio", href: url("materiales/aluminio"), color: "brand-blue" },
+          { label: "Cobre", href: url("materiales/cobre"), color: "brand-green" },
+          { label: "Bronce", href: url("materiales/bronce"), color: "brand-blue" },
+          { label: "Acero Inoxidable", href: url("materiales/acero-inoxidable"), color: "brand-ice" },
+          { label: "Fierro", href: url("materiales/fierro"), color: "brand-ice" },
         ].map((mat) => (
           <a
             href={mat.href}
