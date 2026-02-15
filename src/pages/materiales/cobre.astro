@@ -15,7 +15,7 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
     keywords: ["precio cobre kilo Chile", "vender cobre Concepción", "cobre tubo precio", "cobre calefacción precio"],
   }}
 >
-  <!-- Hero -->
+  <!-- Hero with photo and white gradient overlay -->
   <section class="relative min-h-[60vh] flex items-end">
     <div class="absolute inset-0">
       <img
@@ -24,40 +24,40 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         class="w-full h-full object-cover"
         loading="eager"
       />
-      <div class="absolute inset-0 bg-[#0a0a0a]/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent"></div>
     </div>
     <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-      <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">Materiales</p>
-      <h1 class="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white">
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">Materiales</p>
+      <h1 class="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-gray-900">
         Precio del Cobre
       </h1>
-      <p class="mt-4 sm:mt-6 text-base sm:text-lg text-white/50 max-w-2xl">
+      <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-500 max-w-2xl">
         Precios referenciales por kilo. Cotización final sujeta a inspección y calidad del material.
       </p>
     </div>
   </section>
 
-  <!-- Price table -->
-  <section class="relative py-16 sm:py-24 bg-[#0a0a0a]">
+  <!-- Price cards -->
+  <section class="relative py-16 sm:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">Tarifas</p>
-      <h2 class="font-sans font-black text-2xl sm:text-3xl text-white mb-10">Precios por kilo</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+      <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">Tarifas</p>
+      <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-10">Precios por kilo</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => {
           const trend = getTrendIcon(item.trend);
           const waLink = createWhatsAppLink(item.name, "", "Concepción");
           const isConsult = "consultPrice" in item && item.consultPrice;
           return (
-            <div class="bg-[#0a0a0a] p-6 sm:p-8 flex flex-col">
-              <p class="font-sans font-black text-lg text-white">{item.name}</p>
-              <p class="mt-2 text-sm text-white/40">{item.description}</p>
+            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 flex flex-col">
+              <p class="font-sans font-black text-lg text-gray-900">{item.name}</p>
+              <p class="mt-2 text-sm text-gray-500">{item.description}</p>
               <div class="mt-4 flex items-center justify-between gap-4">
                 {isConsult ? (
-                  <span class="text-base font-semibold text-white">Consultar</span>
+                  <span class="text-base font-semibold text-blue-600">Consultar</span>
                 ) : (
-                  <span class="text-xl font-black text-white tabular-nums">
+                  <span class="text-xl font-black text-gray-900 tabular-nums">
                     {formatPrice(item.price)}
-                    <span class="text-sm font-normal text-white/40 ml-1">/{item.unit}</span>
+                    <span class="text-sm font-normal text-gray-400 ml-1">/{item.unit}</span>
                   </span>
                 )}
                 <span class={`text-sm font-medium ${trend.color}`}>{trend.icon}</span>
@@ -66,7 +66,7 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="mt-6 inline-flex items-center justify-center gap-2 bg-white text-black font-semibold text-sm uppercase tracking-wide px-6 py-3 hover:bg-white/90 transition-colors"
+                class="mt-6 inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-sm rounded-lg px-6 py-3 transition-colors"
               >
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -77,15 +77,15 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           );
         })}
       </div>
-      <p class="mt-6 text-xs text-white/40">Última actualización: {priceData.lastUpdated}</p>
+      <p class="mt-6 text-xs text-gray-400">Última actualización: {priceData.lastUpdated}</p>
     </div>
   </section>
 
-  <!-- Editorial section -->
-  <section class="relative py-16 sm:py-24 bg-[#0a0a0a] border-t border-white/10">
+  <!-- Editorial section with photo -->
+  <section class="relative py-16 sm:py-24 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-0 lg:gap-16 items-center">
-        <div class="order-2 lg:order-1 aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="order-2 lg:order-1 aspect-[4/3] lg:aspect-auto lg:min-h-[400px] rounded-2xl overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&q=70&auto=format"
             alt="Cobre reciclado"
@@ -93,12 +93,12 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           />
         </div>
         <div class="order-1 lg:order-2 py-8 lg:py-0">
-          <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">El material</p>
-          <h2 class="font-sans font-black text-2xl sm:text-3xl text-white mb-6">Cobre: conductor, durable, 100% reciclable</h2>
-          <p class="text-white/50 leading-relaxed mb-4">
+          <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">El material</p>
+          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Cobre: conductor, durable, 100% reciclable</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
             El cobre fue uno de los primeros metales utilizados por la humanidad — hace más de 10.000 años — y sigue siendo fundamental para la electricidad, la construcción y la industria. Chile es el mayor productor mundial.
           </p>
-          <p class="text-white/40 leading-relaxed">
+          <p class="text-gray-500 leading-relaxed">
             Tuberías, cables, radiadores y componentes de calefacción son fuentes comunes de cobre recuperable. Reciclar cobre mantiene su conductividad intacta y reduce la presión sobre la explotación minera.
           </p>
         </div>
@@ -107,11 +107,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
   </section>
 
   <!-- Back link -->
-  <section class="py-8 bg-[#0a0a0a] border-t border-white/10">
+  <section class="py-8 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <a
         href={url("tarifas")}
-        class="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-white transition-colors"
+        class="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-blue-600 transition-colors"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />

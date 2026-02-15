@@ -1,39 +1,49 @@
 ---
 const benefits = [
-  { title: "Pago Inmediato", desc: "Transferencia o efectivo al momento. Sin esperas." },
-  { title: "Retiro a Domicilio", desc: "Vamos a buscar tu material sin costo adicional." },
-  { title: "Pesaje Certificado", desc: "Balanza industrial certificada y proceso transparente." },
-  { title: "Sede Física", desc: "Av. Pedro de Valdivia 733, Concepcion. Visitanos." },
+  { icon: "M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z", title: "Pago Inmediato", desc: "Transferencia o efectivo al momento del pesaje. Sin esperas." },
+  { icon: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.122-.504 1.125-1.125V11.25c0-.374-.185-.722-.49-.933l-3.352-2.318A1.125 1.125 0 0015.118 8H14.25", title: "Retiro a Domicilio", desc: "Vamos a buscar tu material sin costo adicional a tu ubicacion." },
+  { icon: "M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z", title: "Pesaje Certificado", desc: "Balanza industrial certificada. Transparencia total en cada transaccion." },
+  { icon: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z", title: "Sede Fisica", desc: "Av. Pedro de Valdivia 733, Concepcion. Puedes visitarnos." },
 ];
 ---
 
-<section class="relative overflow-hidden">
-  <!-- Full background image -->
-  <div class="absolute inset-0">
-    <img
-      src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=70&auto=format"
-      alt=""
-      class="w-full h-full object-cover"
-      loading="lazy"
-    />
-    <div class="absolute inset-0 bg-[#0a0a0a]/80"></div>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-32">
-    <div class="max-w-md mb-12 sm:mb-16">
-      <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">Nuestra promesa</p>
-      <h2 class="font-sans font-black text-3xl sm:text-5xl text-white leading-[1.05]">
-        Confianza en cada kilo
-      </h2>
+<section class="py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12">
+      <p class="text-sm font-semibold text-blue-600 mb-1">¿Por que elegirnos?</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Confianza en cada kilo</h2>
     </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {benefits.map((b) => (
-        <div class="bg-[#0a0a0a]/70 backdrop-blur-sm p-6 sm:p-10">
-          <h3 class="text-lg sm:text-xl font-bold text-white mb-2">{b.title}</h3>
-          <p class="text-sm text-white/50 leading-relaxed">{b.desc}</p>
+        <div class="text-center p-6">
+          <div class="w-12 h-12 mx-auto mb-4 bg-blue-50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d={b.icon}/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">{b.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{b.desc}</p>
         </div>
       ))}
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="pb-16 sm:pb-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="text-sm font-semibold text-blue-600 mb-1">Ubicacion</p>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3">Visitanos en Concepcion</h3>
+        <p class="text-gray-500 mb-4">Av. Pedro de Valdivia 733, Concepcion, Biobio.</p>
+        <p class="text-sm text-gray-400">Lun-Vie: 08:30 - 18:00 | Sab: 09:00 - 13:00</p>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm h-[300px] sm:h-[350px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.5!2d-73.05!3d-36.827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966b5f4cb7a885e7%3A0x2bc2e1e1b5bafcd6!2sConcepc%C3%B3n%2C%20B%C3%ADo%20B%C3%ADo%2C%20Chile!5e0!3m2!1ses!2scl!4v1"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Ubicacion Exportandes"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>

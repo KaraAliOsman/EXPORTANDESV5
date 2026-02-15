@@ -13,12 +13,12 @@ import { url } from "@/utils/paths";
     ogImage: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=60&auto=format",
   }}
 >
-  <section class="pt-32 pb-16 min-h-screen bg-slate-950">
+  <section class="pt-32 pb-16 min-h-screen bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Back link -->
       <a
         href={url("blog")}
-        class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-brand-blue transition-colors mb-8"
+        class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-blue-600 transition-colors mb-8"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -34,67 +34,66 @@ import { url } from "@/utils/paths";
           class="w-full h-64 sm:h-80 object-cover"
           loading="eager"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
       </div>
 
       <!-- Article content -->
-      <article class="prose prose-invert max-w-none">
-        <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-6">
+      <article class="prose max-w-none">
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-gray-900 mb-6">
           Diferencia entre Cobre, Bronce y Latón: Guía visual
         </h1>
-        <p class="text-slate-300 leading-relaxed mb-6">
+        <p class="text-gray-600 leading-relaxed mb-6">
           Cobre, bronce y latón son metales que se ven similares pero se pagan diferente. Saber distinguirlos te permite clasificar bien tu chatarra y obtener el precio correcto. Esta guía te ayuda a reconocer cada uno por su color, peso y usos habituales.
         </p>
 
-        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+        <h2 class="font-display font-bold text-2xl text-gray-900 mt-10 mb-4">
           Cobre: el metal rojizo
         </h2>
-        <p class="text-slate-300 leading-relaxed mb-4">
-          El <strong class="text-white">cobre puro</strong> tiene un tono rojizo/anaranjado característico. Con el tiempo puede oxidarse y tomar un verde azulado (pátina). Es maleable, buen conductor y pesado. Se usa en cables eléctricos, tuberías, ollas y piezas decorativas. Suele ser el más cotizado de los tres: alrededor de <span class="text-brand-green font-semibold">$6.000-7.500/kg</span> según pureza y formato.
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El <strong class="text-gray-900">cobre puro</strong> tiene un tono rojizo/anaranjado característico. Con el tiempo puede oxidarse y tomar un verde azulado (pátina). Es maleable, buen conductor y pesado. Se usa en cables eléctricos, tuberías, ollas y piezas decorativas. Suele ser el más cotizado de los tres: alrededor de <span class="text-green-600 font-semibold">$6.000-7.500/kg</span> según pureza y formato.
         </p>
 
-        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+        <h2 class="font-display font-bold text-2xl text-gray-900 mt-10 mb-4">
           Bronce: cobre con estaño
         </h2>
-        <p class="text-slate-300 leading-relaxed mb-4">
-          El <strong class="text-white">bronce</strong> es una aleación de cobre y estaño. Su color es más oscuro que el cobre: marrón dorado o café. Es más duro y resistente a la corrosión. Lo encuentras en cañerías, válvulas, campanas, esculturas y bujes. El precio por kilo suele estar entre <span class="text-brand-green font-semibold">$4.500-5.500</span>, algo por debajo del cobre puro.
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El <strong class="text-gray-900">bronce</strong> es una aleación de cobre y estaño. Su color es más oscuro que el cobre: marrón dorado o café. Es más duro y resistente a la corrosión. Lo encuentras en cañerías, válvulas, campanas, esculturas y bujes. El precio por kilo suele estar entre <span class="text-green-600 font-semibold">$4.500-5.500</span>, algo por debajo del cobre puro.
         </p>
 
-        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+        <h2 class="font-display font-bold text-2xl text-gray-900 mt-10 mb-4">
           Latón: cobre con zinc
         </h2>
-        <p class="text-slate-300 leading-relaxed mb-4">
-          El <strong class="text-white">latón</strong> es aleación de cobre y zinc. Su color es más amarillo/dorado que el cobre y el bronce, a veces con tonos brillantes. Es más liviano que ambos y muy usado en llaves, cerraduras, grifería, instrumentos musicales y adornos. Se cotiza aproximadamente en <span class="text-brand-green font-semibold">$3.500-4.500/kg</span>.
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El <strong class="text-gray-900">latón</strong> es aleación de cobre y zinc. Su color es más amarillo/dorado que el cobre y el bronce, a veces con tonos brillantes. Es más liviano que ambos y muy usado en llaves, cerraduras, grifería, instrumentos musicales y adornos. Se cotiza aproximadamente en <span class="text-green-600 font-semibold">$3.500-4.500/kg</span>.
         </p>
 
-        <div class="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 my-8">
-          <h3 class="font-display font-bold text-lg text-white mb-3">
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 my-8">
+          <h3 class="font-display font-bold text-lg text-gray-900 mb-3">
             Resumen visual: color y peso
           </h3>
-          <ul class="text-slate-300 space-y-2 list-disc pl-6">
-            <li><strong class="text-white">Cobre:</strong> rojizo, pesado, maleable</li>
-            <li><strong class="text-white">Bronce:</strong> marrón dorado, duro, resistente</li>
-            <li><strong class="text-white">Latón:</strong> amarillo/dorado, más liviano, brillante</li>
+          <ul class="text-gray-600 space-y-2 list-disc pl-6">
+            <li><strong class="text-gray-900">Cobre:</strong> rojizo, pesado, maleable</li>
+            <li><strong class="text-gray-900">Bronce:</strong> marrón dorado, duro, resistente</li>
+            <li><strong class="text-gray-900">Latón:</strong> amarillo/dorado, más liviano, brillante</li>
           </ul>
         </div>
 
-        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+        <h2 class="font-display font-bold text-2xl text-gray-900 mt-10 mb-4">
           Cómo probar en casa (pruebas simples)
         </h2>
-        <p class="text-slate-300 leading-relaxed mb-4">
+        <p class="text-gray-600 leading-relaxed mb-4">
           Si no estás seguro, puedes hacer estas pruebas caseras:
         </p>
-        <ul class="text-slate-300 space-y-2 mb-6 list-disc pl-6">
-          <li><strong class="text-white">Imán:</strong> el cobre, bronce y latón no son magnéticos. Si el imán se pega, probablemente sea acero o hierro recubierto.</li>
-          <li><strong class="text-white">Peso:</strong> el cobre es el más denso. El latón suele sentirse más liviano en la mano.</li>
-          <li><strong class="text-white">Color y uso:</strong> las llaves y grifería suelen ser latón; las cañerías viejas bronce; los cables cobre.</li>
+        <ul class="text-gray-600 space-y-2 mb-6 list-disc pl-6">
+          <li><strong class="text-gray-900">Imán:</strong> el cobre, bronce y latón no son magnéticos. Si el imán se pega, probablemente sea acero o hierro recubierto.</li>
+          <li><strong class="text-gray-900">Peso:</strong> el cobre es el más denso. El latón suele sentirse más liviano en la mano.</li>
+          <li><strong class="text-gray-900">Color y uso:</strong> las llaves y grifería suelen ser latón; las cañerías viejas bronce; los cables cobre.</li>
         </ul>
 
-        <h2 class="font-display font-bold text-2xl text-white mt-10 mb-4">
+        <h2 class="font-display font-bold text-2xl text-gray-900 mt-10 mb-4">
           No mezcles para vender
         </h2>
-        <p class="text-slate-300 leading-relaxed mb-6">
-          Cada metal se paga a un precio distinto. Si los mezclas, el comprador tendrá que clasificarlos y probablemente te ofrecerá un precio promedio más bajo. Separa cobre, bronce y latón antes de llevar tu chatarra. En <strong class="text-brand-blue">Exportandes</strong> compramos los tres metales en Concepción. Si tienes dudas sobre la clasificación, puedes <a href={url("vender")} class="text-brand-blue hover:text-brand-green underline transition-colors font-medium">contactarnos para una cotización</a> y te orientamos según el material que tengas.
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Cada metal se paga a un precio distinto. Si los mezclas, el comprador tendrá que clasificarlos y probablemente te ofrecerá un precio promedio más bajo. Separa cobre, bronce y latón antes de llevar tu chatarra. En <strong class="text-blue-600">Exportandes</strong> compramos los tres metales en Concepción. Si tienes dudas sobre la clasificación, puedes <a href={url("vender")} class="text-blue-600 hover:text-green-600 underline transition-colors font-medium">contactarnos para una cotización</a> y te orientamos según el material que tengas.
         </p>
       </article>
     </div>

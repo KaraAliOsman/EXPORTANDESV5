@@ -1,15 +1,15 @@
 /**
  * Prepends the Astro base URL to internal paths.
- * Use this for ALL internal <a href> links.
+ * Handles trailing slash correctly.
  */
-const BASE = import.meta.env.BASE_URL; // e.g. "/EXPORTANDESV5/"
+const RAW_BASE = import.meta.env.BASE_URL; // "/EXPORTANDESV5" (no trailing slash)
+const BASE = RAW_BASE.endsWith("/") ? RAW_BASE : `${RAW_BASE}/`;
 
 export function url(path: string): string {
   const clean = path.startsWith("/") ? path.slice(1) : path;
   return `${BASE}${clean}`;
 }
 
-/** For static assets in /public */
 export function asset(path: string): string {
   const clean = path.startsWith("/") ? path.slice(1) : path;
   return `${BASE}${clean}`;

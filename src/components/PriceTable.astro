@@ -2,52 +2,47 @@
 import priceData from "@/data/prices.json";
 import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
 import { url } from "@/utils/paths";
-
 const allItems = priceData.categories.flatMap((c) => c.items);
-const featured = priceData.featured
-  .map((id) => allItems.find((item) => item.id === id))
-  .filter(Boolean) as typeof allItems;
+const featured = priceData.featured.map((id) => allItems.find((i) => i.id === id)).filter(Boolean) as typeof allItems;
 ---
 
-<section class="relative bg-[#0a0a0a] py-20 sm:py-32 overflow-hidden">
+<section class="py-16 sm:py-24 bg-gray-50">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-16">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
       <div>
-        <p class="text-xs font-medium tracking-[0.25em] uppercase text-white/40 mb-3">Precios</p>
-        <h2 class="font-sans font-black text-3xl sm:text-5xl text-white leading-[1.05]">Tarifas por kilo</h2>
+        <p class="text-sm font-semibold text-blue-600 mb-1">Precios actualizados</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Tarifas por kilo</h2>
       </div>
-      <a href={url("tarifas")} class="text-sm text-white/50 hover:text-white underline underline-offset-4 transition-colors">
-        Ver lista completa &rarr;
+      <a href={url("tarifas")} class="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
+        Ver todos los precios &rarr;
       </a>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
       {featured.map((item) => {
         const trend = getTrendIcon(item.trend);
         const waLink = createWhatsAppLink(item.name, "", "Concepcion");
         return (
-          <div class="bg-[#0a0a0a] p-6 sm:p-8 group">
-            <div class="flex items-center justify-between mb-6 sm:mb-8">
-              <h3 class="text-sm font-semibold text-white/60 uppercase tracking-wide">{item.name}</h3>
-              <span class:list={["text-xs font-medium", trend.color]}>{trend.icon} {trend.label}</span>
+          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-bold text-gray-900">{item.name}</h3>
+              <span class:list={["text-xs font-medium px-2 py-0.5 rounded-full",
+                item.trend === "up" ? "bg-green-50 text-green-700" :
+                item.trend === "down" ? "bg-red-50 text-red-600" : "bg-gray-100 text-gray-500"
+              ]}>{trend.icon} {trend.label}</span>
             </div>
-            <p class="text-3xl sm:text-4xl font-black text-white tabular-nums mb-1">
-              {formatPrice(item.price)}
-            </p>
-            <p class="text-xs text-white/30 mb-6">por kilogramo</p>
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white underline underline-offset-4 transition-colors"
-            >
-              Cotizar venta &rarr;
+            <p class="text-xs text-gray-400 mb-3">{item.description}</p>
+            <p class="text-3xl font-extrabold text-gray-900 mb-1">{formatPrice(item.price)}</p>
+            <p class="text-xs text-gray-400 mb-5">por kilogramo</p>
+            <a href={waLink} target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-2 w-full py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-lg transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+              Cotizar venta
             </a>
           </div>
         );
       })}
     </div>
-
-    <p class="mt-6 text-xs text-white/20">Actualizado: {priceData.lastUpdated}. Precios referenciales CLP.</p>
+    <p class="mt-5 text-xs text-gray-400 text-center">Actualizado: {priceData.lastUpdated}. Precios referenciales CLP.</p>
   </div>
 </section>

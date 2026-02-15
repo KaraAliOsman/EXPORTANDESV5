@@ -3,39 +3,38 @@ import { SITE } from "@/utils/seo";
 import { url, asset } from "@/utils/paths";
 ---
 
-<footer class="border-t border-white/5 bg-[#0a0a0a]">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 sm:py-16">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
       <!-- Brand -->
       <div class="col-span-2 md:col-span-1">
-        <a href={url("/")} class="inline-block mb-4">
-          <img src={asset("logo.png")} alt="Exportandes" class="h-6 object-contain brightness-0 invert" />
+        <a href={url("/")} class="inline-block mb-1">
+          <img src={asset("logo.png")} alt="Exportandes" class="h-7 object-contain brightness-0 invert" />
         </a>
-        <p class="text-sm text-white/30 leading-relaxed max-w-xs">
-          Compra de chatarra y metales. Concepcion, Biobio y Nuble.
-        </p>
+        <p class="text-xs text-gray-400 mb-3">by <a href="https://aluwe.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Aluwe</a> &amp; <a href="https://ingotsan.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline underline-offset-2">Ingotsan</a></p>
+        <p class="text-sm text-gray-400 leading-relaxed max-w-xs">Compra de chatarra y metales. Concepcion, Biobio y Nuble.</p>
       </div>
 
-      <!-- Nav -->
+      <!-- Pages -->
       <div>
-        <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">Paginas</h3>
-        <ul class="space-y-2.5">
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-gray-500 mb-4">Paginas</h3>
+        <ul class="space-y-2">
           {[
-            { label: "Vender Ahora", href: url("vender") },
+            { label: "Vender", href: url("vender") },
             { label: "Tarifas", href: url("tarifas") },
             { label: "Zonas", href: url("zonas") },
             { label: "Blog", href: url("blog") },
             { label: "Contacto", href: url("contacto") },
           ].map((l) => (
-            <li><a href={l.href} class="text-sm text-white/30 hover:text-white transition-colors">{l.label}</a></li>
+            <li><a href={l.href} class="text-sm text-gray-400 hover:text-white transition-colors">{l.label}</a></li>
           ))}
         </ul>
       </div>
 
       <!-- Materials -->
       <div>
-        <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">Materiales</h3>
-        <ul class="space-y-2.5">
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-gray-500 mb-4">Materiales</h3>
+        <ul class="space-y-2">
           {[
             { label: "Cobre", href: url("materiales/cobre") },
             { label: "Aluminio", href: url("materiales/aluminio") },
@@ -43,26 +42,35 @@ import { url, asset } from "@/utils/paths";
             { label: "Acero Inox.", href: url("materiales/acero-inoxidable") },
             { label: "Fierro", href: url("materiales/fierro") },
           ].map((m) => (
-            <li><a href={m.href} class="text-sm text-white/30 hover:text-white transition-colors">{m.label}</a></li>
+            <li><a href={m.href} class="text-sm text-gray-400 hover:text-white transition-colors">{m.label}</a></li>
           ))}
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">Contacto</h3>
-        <ul class="space-y-2.5 text-sm text-white/30">
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-gray-500 mb-4">Contacto</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
           <li>{SITE.address.street}</li>
-          <li>{SITE.address.city}</li>
+          <li>{SITE.address.city}, {SITE.address.region}</li>
           <li><a href={`tel:${SITE.phone}`} class="hover:text-white transition-colors">{SITE.phone}</a></li>
           <li><a href={`mailto:${SITE.email}`} class="hover:text-white transition-colors">{SITE.email}</a></li>
         </ul>
       </div>
+
+      <!-- Partners -->
+      <div>
+        <h3 class="text-xs font-semibold tracking-wider uppercase text-gray-500 mb-4">Partners</h3>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="https://aluwe.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Aluwe</a></li>
+          <li><a href="https://ingotsan.cl" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Ingotsan</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-white/20">&copy; {new Date().getFullYear()} Exportandes</p>
-      <p class="text-xs text-white/20">Precios referenciales. Cotizacion sujeta a inspeccion.</p>
+    <div class="mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p class="text-xs text-gray-500">&copy; {new Date().getFullYear()} Exportandes. Todos los derechos reservados.</p>
+      <p class="text-xs text-gray-500">Precios referenciales. Cotizacion sujeta a inspeccion.</p>
     </div>
   </div>
 </footer>
