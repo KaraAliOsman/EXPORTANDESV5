@@ -1,0 +1,89 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "¿Qué es la chatarra electrónica y cómo reciclarla? | Exportandes",
+    description: "Conoce los tipos de chatarra electrónica, qué metales se pueden recuperar y cómo venderla correctamente. Guía completa de reciclaje de e-waste en Chile.",
+    keywords: ["chatarra electrónica", "e-waste", "reciclaje electrónicos", "metales recuperables", "vender chatarra electrónica"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand-teal transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <!-- Hero -->
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format"
+          alt="Chatarra electrónica y reciclaje"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+            ¿Qué es la chatarra electrónica y cómo reciclarla?
+          </h1>
+          <div class="flex gap-4 text-sm text-gray-600">
+            <span>15 enero 2026</span>
+            <span>•</span>
+            <span>5 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article body -->
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          La chatarra electrónica, también conocida como e-waste o RAEE (Residuos de Aparatos Eléctricos y Electrónicos), engloba todos los dispositivos electrónicos al final de su vida útil: computadores, celulares, televisores, electrodomésticos, cables y equipos industriales. En Chile se generan miles de toneladas anuales de estos residuos, y gran parte termina en vertederos sin aprovechar los metales valiosos que contienen.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Tipos de chatarra electrónica</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Los equipos electrónicos se clasifican según su origen: equipos informáticos (CPU, monitores, notebooks), telecomunicaciones (celulares, routers), electrodomésticos grandes (refrigeradores, lavadoras) y pequeños (microondas, licuadoras). También se consideran cables, motores, transformadores y placas electrónicas, que suelen concentrar la mayor cantidad de metales preciosos.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Importancia del reciclaje</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Reciclar chatarra electrónica evita la extracción de nuevos minerales, reduce la contaminación por metales pesados y toxinas en el suelo y el agua, y recupera materiales valiosos. El cobre, aluminio, oro, plata y otros metales pueden extraerse de los equipos en desuso y reintroducirse en la cadena productiva.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Metales que se pueden recuperar</h2>
+        <ul class="text-gray-600 space-y-2 mb-6 list-disc pl-6">
+          <li><strong class="text-gray-900">Cobre:</strong> cables, motores, bobinas y placas.</li>
+          <li><strong class="text-gray-900">Aluminio:</strong> carcasas, disipadores y componentes estructurales.</li>
+          <li><strong class="text-gray-900">Oro y plata:</strong> en pequeñas cantidades en placas y conectores.</li>
+          <li><strong class="text-gray-900">Estaño y plomo:</strong> en soldaduras y circuitos.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cómo vender chatarra electrónica</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Para obtener el mejor precio, separa los materiales por tipo: cables pelados, motores, transformadores, placas y metales puros. Los centros de acopio y compradores como <a href={url("vender")} class="text-brand-teal hover:underline font-medium">Exportandes</a> valoran el material bien clasificado y limpio. Si tienes volumen de chatarra electrónica, puedes <a href={url("vender")} class="text-brand-teal hover:underline font-medium">cotizar aquí</a> y te orientamos sobre qué aceptamos y los precios actuales.
+        </p>
+
+        <div class="bg-gray-50 rounded-2xl p-6 my-8">
+          <h3 class="font-bold text-lg text-gray-900 mb-3">Consejo práctico</h3>
+          <p class="text-gray-600">
+            Pelar cables de cobre antes de venderlos suele aumentar significativamente el precio por kilo, ya que el cobre limpio se cotiza más alto que el cable con aislante.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

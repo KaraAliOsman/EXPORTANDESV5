@@ -1,0 +1,83 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "Mercado del cobre en 2026: Tendencias y proyecciones | Exportandes",
+    description: "Análisis del mercado global del cobre en 2026. Precios LME, papel de Chile, demanda de vehículos eléctricos y energía verde.",
+    keywords: ["mercado cobre 2026", "precio cobre LME", "cobre Chile", "demanda cobre EVs", "tendencias cobre"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand-teal transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&q=60&auto=format"
+          alt="Mercado del cobre 2026"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+            Mercado del cobre en 2026: Tendencias y proyecciones
+          </h1>
+          <div class="flex gap-4 text-sm text-gray-600">
+            <span>10 diciembre 2025</span>
+            <span>•</span>
+            <span>6 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          El cobre es uno de los metales más demandados a nivel global debido a sus aplicaciones en construcción, electrónica, transporte y energías renovables. En 2026, las proyecciones apuntan a una demanda sostenida impulsada por la transición energética, los vehículos eléctricos y la expansión de infraestructura en economías emergentes. Chile, como principal productor mundial, sigue siendo clave en el abastecimiento.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Precios LME y volatilidad</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          La London Metal Exchange (LME) fija el precio de referencia del cobre a nivel global. Los precios fluctúan según la oferta, la demanda, la situación geopolítica y las expectativas económicas. En períodos de alta demanda o restricciones de suministro, los precios suben; en recesiones o exceso de producción, bajan. Los compradores de chatarra ajustan sus cotizaciones según estas tendencias.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Rol de Chile en el mercado</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Chile produce alrededor de un cuarto del cobre mundial. Las minas de la zona norte (Chuquicamata, Escondida, Collahuasi, etc.) abastecen al mercado internacional. Esta posición privilegiada hace que el país sea sensible a los precios internacionales y que el mercado local de chatarra también se mueva en función de la LME y del tipo de cambio.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Demanda de vehículos eléctricos</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Un vehículo eléctrico utiliza entre tres y cuatro veces más cobre que uno convencional (motores, baterías, cableado, infraestructura de carga). El crecimiento de la flota de EVs a nivel mundial impulsa la demanda de cobre de forma estructural. Se espera que esta tendencia se mantenga en 2026 y años siguientes.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Energía verde e infraestructura</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Parques solares, eólicos y redes de transmisión requieren grandes cantidades de cobre. La inversión en energías renovables y en redes inteligentes sigue creciendo, lo que sostiene la demanda a largo plazo. Para quienes venden chatarra de cobre, un mercado internacional fortalecido suele traducirse en precios más favorables cuando la oferta local no satisface la demanda.
+        </p>
+
+        <div class="bg-gray-50 rounded-2xl p-6 my-8">
+          <p class="text-gray-600">
+            Si tienes cobre para vender y quieres aprovechar las condiciones del mercado, <a href={url("vender")} class="text-brand-teal hover:underline font-medium">cotiza con nosotros</a>. En Exportandes seguimos las tendencias del cobre y te ofrecemos precios competitivos según el tipo y calidad de tu material.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

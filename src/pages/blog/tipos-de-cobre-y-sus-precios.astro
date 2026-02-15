@@ -1,0 +1,90 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "Tipos de cobre y sus precios: Guía para vendedores | Exportandes",
+    description: "Conoce los tipos de cobre: primera, segunda, tercera, tubo y cable. Diferencias de precio, cómo identificar la calidad y vender al mejor valor.",
+    keywords: ["tipos de cobre", "cobre primera segunda tercera", "precio cobre kg", "cobre tubo cable", "vender cobre Chile"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1605557202138-f778ef9ebf96?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand-teal transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1605557202138-f778ef9ebf96?w=1200&q=60&auto=format"
+          alt="Tipos de cobre y precios"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+            Tipos de cobre y sus precios: Guía para vendedores
+          </h1>
+          <div class="flex gap-4 text-sm text-gray-600">
+            <span>5 enero 2026</span>
+            <span>•</span>
+            <span>5 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          El cobre se clasifica en el mercado de chatarra según su pureza, origen y forma. Conocer estas categorías te ayuda a presentar tu material correctamente y recibir la mejor cotización. Los precios pueden variar según la London Metal Exchange (LME) y la oferta local, pero entender las diferencias entre tipos es fundamental.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cobre primera (milberry, limpio)</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Es el cobre más puro y mejor cotizado. Incluye cable pelado sin aislante, alambres finos de cobre electrolítico y virutas de cobre limpio. Debe estar libre de óxido, soldaduras y aleaciones. Suele ser el precio de referencia más alto en el mercado.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cobre segunda</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Cobre con pequeñas impurezas: tubos de refrigeración, conductos de cobre con algo de óxido o estaño, cables con forro quemado pero cobre visible. Se paga un poco menos que la primera por el trabajo extra de refinado.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cobre tercera (mezcla)</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Mezcla de cobre con otros metales, motores quemados, transformadores, radiadores con soldaduras. Tiene mayor proporción de impurezas y se cotiza por debajo de primera y segunda.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cobre tubo y cable con forro</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Tubos de agua o gas y cables con aislante (plástico, goma). El comprador deduce el peso del material no cobre al cotizar. Pelar el cable aumenta el valor, ya que el cobre limpio pesa más en proporción y cotiza mejor.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cómo identificar la calidad</h2>
+        <ul class="text-gray-600 space-y-2 mb-6 list-disc pl-6">
+          <li><strong class="text-gray-900">Color:</strong> cobre puro es rojizo brillante; óxido verde indica oxidación.</li>
+          <li><strong class="text-gray-900">Flexibilidad:</strong> el cobre puro es muy maleable.</li>
+          <li><strong class="text-gray-900">Origen:</strong> cables eléctricos suelen ser cobre primera si están pelados.</li>
+        </ul>
+
+        <div class="bg-gray-50 rounded-2xl p-6 my-8">
+          <p class="text-gray-600">
+            Si tienes dudas sobre la clasificación de tu cobre, puedes enviarnos fotos o traer una muestra. En <a href={url("vender")} class="text-brand-teal hover:underline font-medium">Exportandes</a> compramos todos los tipos de cobre y te orientamos para que obtengas el mejor precio por tu material.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

@@ -1,0 +1,85 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "Fierro vs Acero: Diferencias y precios en chatarra | Exportandes",
+    description: "Aprende a distinguir fierro de acero. Diferencias físicas, cómo identificarlos, comparación de precios y cuál vale más en el mercado de chatarra.",
+    keywords: ["fierro vs acero", "diferencias fierro acero", "precio chatarra fierro", "chatarra acero", "identificar metales"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand-teal transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=60&auto=format"
+          alt="Fierro vs acero en chatarra"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+            Fierro vs Acero: Diferencias y precios en chatarra
+          </h1>
+          <div class="flex gap-4 text-sm text-gray-600">
+            <span>20 diciembre 2025</span>
+            <span>•</span>
+            <span>4 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          En el lenguaje cotidiano se usa "fierro" y "acero" casi como sinónimos, pero en el mercado de chatarra hay diferencias importantes. Ambos son metales ferrosos (contienen hierro), pero el acero tiene carbono y otros elementos que lo hacen más resistente y, en algunos casos, más valorado. Conocer estas diferencias te ayuda a clasificar bien y entender por qué los precios varían.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">¿Qué es el fierro?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El fierro (hierro) puro es un metal relativamente blando y poco usado en estado puro. Lo que llamamos "fierro" en Chile suele ser hierro fundido o acero de bajo carbono. El hierro fundido es quebradizo, se oxida fácilmente y suele usarse en piezas de motor, radiadores viejos y estructuras anticuadas.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">¿Qué es el acero?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El acero es una aleación de hierro con carbono (generalmente entre 0,2% y 2%). Puede incluir otros elementos como manganeso, cromo o níquel. Es más duro, resistente y versátil que el hierro fundido. Lo encuentras en vigas, perfiles, autopartes, herramientas y maquinaria.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cómo diferenciarlos</h2>
+        <ul class="text-gray-600 space-y-2 mb-6 list-disc pl-6">
+          <li><strong class="text-gray-900">Imán:</strong> ambos son magnéticos, así que no ayuda a distinguirlos.</li>
+          <li><strong class="text-gray-900">Resistencia:</strong> el acero suele ser más duro; el hierro fundido se rompe con facilidad.</li>
+          <li><strong class="text-gray-900">Uso:</strong> vigas, caños y autopartes suelen ser acero; radiadores viejos y piezas pesadas fundidas suelen ser fierro.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Precios en el mercado</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          En general, el acero estructural (chatarra de acero limpia) puede cotizar ligeramente mejor que el fierro mezclado o contaminado, porque es más fácil de procesar. Sin embargo, ambos están en el rango de metales ferrosos de menor valor comparado con cobre, aluminio o bronce. La limpieza y clasificación influye más que la diferencia fierro-acero en muchos casos.
+        </p>
+
+        <div class="bg-gray-50 rounded-2xl p-6 my-8">
+          <p class="text-gray-600">
+            Si tienes chatarra ferrosa y quieres saber qué conviene más, separa lo que puedas y <a href={url("vender")} class="text-brand-teal hover:underline font-medium">cotiza con nosotros</a>. En Exportandes también compramos fierro y acero cuando forma parte de un cargamento mixto de metales.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

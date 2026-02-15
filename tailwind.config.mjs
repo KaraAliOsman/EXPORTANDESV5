@@ -5,10 +5,12 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#0a0a0a',
-          blue: '#0b5cff',
-          green: '#2da77a',
-          ice: '#e2e8f0',
+          navy: '#1a3a4a',
+          teal: '#3db5a6',
+          dark: '#0f2a36',
+          slate: '#2c4f5f',
+          light: '#e8f4f2',
+          ice: '#f0f7f6',
         },
       },
       fontFamily: {
