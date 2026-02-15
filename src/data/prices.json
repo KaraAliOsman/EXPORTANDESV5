@@ -1,66 +1,56 @@
-[
-  {
-    "id": "cobre-pelado",
-    "name": "Cobre (Cable Pelado)",
-    "price": 7200,
-    "unit": "kg",
-    "trend": "up",
-    "description": "Cable de cobre limpio, sin aislante ni recubrimiento."
-  },
-  {
-    "id": "cobre-mixto",
-    "name": "Cobre Mixto",
-    "price": 5800,
-    "unit": "kg",
-    "trend": "stable",
-    "description": "Cobre mezclado con aislante plástico o residuos menores."
-  },
-  {
-    "id": "aluminio-perfil",
-    "name": "Perfil de Aluminio",
-    "price": 1900,
-    "unit": "kg",
-    "trend": "stable",
-    "description": "Perfiles de aluminio limpios de ventanas, puertas o estructuras."
-  },
-  {
-    "id": "aluminio-lata",
-    "name": "Aluminio (Latas)",
-    "price": 850,
-    "unit": "kg",
-    "trend": "up",
-    "description": "Latas de bebida compactadas o sueltas."
-  },
-  {
-    "id": "laton",
-    "name": "Latón",
-    "price": 3100,
-    "unit": "kg",
-    "trend": "down",
-    "description": "Llaves, grifería, válvulas y piezas de latón."
-  },
-  {
-    "id": "bronce",
-    "name": "Bronce",
-    "price": 4200,
-    "unit": "kg",
-    "trend": "up",
-    "description": "Piezas de bronce industrial, campanas, estatuas."
-  },
-  {
-    "id": "acero-inoxidable",
-    "name": "Acero Inoxidable",
-    "price": 950,
-    "unit": "kg",
-    "trend": "stable",
-    "description": "Ollas, barras, láminas de acero inoxidable."
-  },
-  {
-    "id": "hierro",
-    "name": "Fierro / Hierro",
-    "price": 120,
-    "unit": "kg",
-    "trend": "down",
-    "description": "Chatarra ferrosa general: vigas, fierro de construcción."
-  }
-]
+{
+  "lastUpdated": "2 de febrero de 2026",
+  "categories": [
+    {
+      "id": "no-ferrosos",
+      "name": "Materiales No Ferrosos",
+      "description": "Metales sin contenido de fierro, como cobre y aluminio",
+      "items": [
+        { "id": "cobre-3ra", "name": "Cobre 3ra", "price": 8130, "unit": "kg", "trend": "up", "description": "Cobre de tercera calidad", "category": "cobre" },
+        { "id": "cobre-tubo", "name": "Cobre Tubo", "price": 8120, "unit": "kg", "trend": "up", "description": "Tuberías de cobre", "category": "cobre" },
+        { "id": "cobre-calef", "name": "Cobre Calefacción", "price": 6200, "unit": "kg", "trend": "stable", "description": "Cobre de calefacción", "category": "cobre" },
+        { "id": "bronce-colorado", "name": "Bronce Colorado", "price": 6000, "unit": "kg", "trend": "stable", "description": "Bronce rojizo de alta calidad", "category": "bronce" },
+        { "id": "bronce-amarillo", "name": "Bronce Amarillo", "price": 5000, "unit": "kg", "trend": "down", "description": "Bronce amarillo, grifería y válvulas", "category": "bronce" },
+        { "id": "cobre-radiadora", "name": "Cobre Radiadora", "price": 4100, "unit": "kg", "trend": "stable", "description": "Radiadores de cobre", "category": "cobre" },
+        { "id": "al-cu-radiadora", "name": "Al/Cu Radiadora", "price": 3000, "unit": "kg", "trend": "stable", "description": "Radiadores de aluminio y cobre. Rango referencial $3.000 – $3.500/kg", "category": "aluminio" },
+        { "id": "aluminio-offset", "name": "Aluminio Offset", "price": 1800, "unit": "kg", "trend": "up", "description": "Planchas de aluminio de imprenta offset", "category": "aluminio" },
+        { "id": "aluminio-perfil", "name": "Aluminio Perfil", "price": 1700, "unit": "kg", "trend": "stable", "description": "Perfiles de aluminio de ventanas, puertas y estructuras", "category": "aluminio" },
+        { "id": "aluminio-duro", "name": "Aluminio Duro", "price": 1300, "unit": "kg", "trend": "stable", "description": "Aluminio duro, piezas gruesas y estructurales", "category": "aluminio" },
+        { "id": "aluminio-lata", "name": "Aluminio Lata", "price": 1300, "unit": "kg", "trend": "up", "description": "Latas de bebida de aluminio", "category": "aluminio" },
+        { "id": "aluminio-radiadora", "name": "Aluminio Radiadora", "price": 810, "unit": "kg", "trend": "down", "description": "Radiadores de aluminio", "category": "aluminio" }
+      ]
+    },
+    {
+      "id": "ferrosos",
+      "name": "Materiales Ferrosos",
+      "description": "Metales con contenido de fierro y acero",
+      "items": [
+        { "id": "fierro-pesado", "name": "Fierro Pesado", "price": 195, "unit": "kg", "trend": "stable", "description": "Más de 10mm de espesor", "category": "fierro" },
+        { "id": "fierro-corto", "name": "Fierro Corto", "price": 195, "unit": "kg", "trend": "stable", "description": "1 metro de largo y más de 4mm de espesor", "category": "fierro" },
+        { "id": "fierro-largo", "name": "Fierro Largo", "price": 185, "unit": "kg", "trend": "down", "description": "Hasta 2 metros y más de 4mm de espesor", "category": "fierro" },
+        { "id": "fierro-mixto", "name": "Fierro Mixto", "price": 175, "unit": "kg", "trend": "stable", "description": "Fierro mezclado de distintos tipos", "category": "fierro" },
+        { "id": "lata-chatarra", "name": "Lata Chatarra", "price": 170, "unit": "kg", "trend": "stable", "description": "Lata ferrosa y hojalata", "category": "fierro" },
+        { "id": "fierro-fundido", "name": "Fierro Fundido", "price": 130, "unit": "kg", "trend": "down", "description": "Piezas de hierro fundido", "category": "fierro" },
+        { "id": "viruta", "name": "Viruta", "price": 50, "unit": "kg", "trend": "stable", "description": "Viruta de fierro y acero", "category": "fierro" },
+        { "id": "acero-inoxidable", "name": "Acero Inoxidable", "price": 950, "unit": "kg", "trend": "stable", "description": "Ollas, barras, láminas de acero inoxidable", "category": "acero-inoxidable" }
+      ]
+    },
+    {
+      "id": "especiales",
+      "name": "Materiales Especiales",
+      "description": "Metales especializados y aleaciones específicas",
+      "items": [
+        { "id": "equipos-desuso", "name": "Equipos en Desuso", "price": 0, "unit": "kg", "trend": "stable", "description": "Precio a consultar según tipo y estado del equipo", "category": "especiales", "consultPrice": true },
+        { "id": "electrico", "name": "Eléctrico", "price": 0, "unit": "kg", "trend": "stable", "description": "Precio a consultar según componentes y materiales", "category": "especiales", "consultPrice": true },
+        { "id": "chatarra-maquinaria", "name": "Chatarra de Maquinaria", "price": 0, "unit": "kg", "trend": "stable", "description": "Precio a consultar según tipo de maquinaria y materiales", "category": "especiales", "consultPrice": true }
+      ]
+    }
+  ],
+  "featured": ["aluminio-perfil", "cobre-3ra", "aluminio-duro"],
+  "disclaimers": [
+    "Los precios están sujetos a variaciones según el mercado internacional",
+    "Precios por kilogramo en pesos chilenos (CLP)",
+    "Precios pueden variar según la calidad y limpieza del material",
+    "Algunos materiales requieren documentación legal (acta de procedencia, facturas, etc.)"
+  ]
+}

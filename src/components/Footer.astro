@@ -18,13 +18,12 @@ import { SITE } from "@/utils/seo";
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-2 mb-4">
-          <div class="w-9 h-9 bg-brand-blue rounded-lg flex items-center justify-center font-display font-extrabold text-white text-lg">
-            E
-          </div>
-          <span class="font-display font-bold text-xl text-white tracking-tight">
-            Export<span class="text-brand-blue">andes</span>
-          </span>
+        <a href="/" class="inline-block mb-4">
+          <img
+            src="/EXPORTANDESV5/logo.png"
+            alt="Exportandes"
+            class="h-8 object-contain"
+          />
         </a>
         <p class="text-slate-400 text-sm leading-relaxed">
           Compra de chatarra y metales al mejor precio. Servicio en Concepción, Biobío y Ñuble.
@@ -55,9 +54,15 @@ import { SITE } from "@/utils/seo";
       <div>
         <h3 class="font-display font-bold text-white mb-4">Materiales</h3>
         <ul class="space-y-2">
-          {["Cobre", "Aluminio", "Latón", "Bronce", "Acero Inoxidable", "Fierro"].map((mat) => (
+          {[
+            { label: "Cobre", href: "/materiales/cobre" },
+            { label: "Aluminio", href: "/materiales/aluminio" },
+            { label: "Bronce", href: "/materiales/bronce" },
+            { label: "Acero Inoxidable", href: "/materiales/acero-inoxidable" },
+            { label: "Fierro", href: "/materiales/fierro" },
+          ].map((mat) => (
             <li>
-              <span class="text-sm text-slate-400">{mat}</span>
+              <a href={mat.href} class="text-sm text-slate-400 hover:text-white transition-colors duration-200">{mat.label}</a>
             </li>
           ))}
         </ul>

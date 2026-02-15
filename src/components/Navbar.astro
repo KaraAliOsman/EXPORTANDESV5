@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Zonas", href: "/zonas" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Blog", href: "/blog" },
-  { label: "Contacto", href: "/contacto" },
 ];
 ---
 
@@ -22,13 +21,17 @@ const navLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group" aria-label="Exportandes - Inicio">
-        <div class="w-9 h-9 bg-brand-blue rounded-lg flex items-center justify-center font-display font-extrabold text-white text-lg group-hover:scale-105 transition-transform">
-          E
-        </div>
-        <span class="font-display font-bold text-xl text-white tracking-tight hidden sm:block">
-          Export<span class="text-brand-blue">andes</span>
-        </span>
+      <a href="/" class="flex items-center group" aria-label="Exportandes - Inicio">
+        <img
+          src="/EXPORTANDESV5/logo-symbol.png"
+          alt="Exportandes"
+          class="h-9 w-9 sm:hidden group-hover:scale-105 transition-transform object-contain"
+        />
+        <img
+          src="/EXPORTANDESV5/logo.png"
+          alt="Exportandes"
+          class="h-8 hidden sm:block group-hover:scale-105 transition-transform object-contain"
+        />
       </a>
 
       <!-- Desktop Nav -->

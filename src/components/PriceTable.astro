@@ -1,9 +1,15 @@
 ---
-import prices from "@/data/prices.json";
+import priceData from "@/data/prices.json";
 import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
+
+// Get featured items
+const allItems = priceData.categories.flatMap((c) => c.items);
+const featured = priceData.featured
+  .map((id) => allItems.find((item) => item.id === id))
+  .filter(Boolean) as typeof allItems;
 ---
 
-<section id="precios" class="relative py-24 overflow-hidden">
+<section id="precios" class="relative py-20 sm:py-24 overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0">
     <img
@@ -17,77 +23,74 @@ import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp"
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
-    <div class="text-center mb-14">
-      <span class="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-brand-blue bg-brand-blue/10 border border-brand-blue/20 rounded-full">
+    <div class="text-center mb-10 sm:mb-14">
+      <span class="inline-block px-3 py-1 sm:px-4 sm:py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-brand-blue bg-brand-blue/10 border border-brand-blue/20 rounded-full">
         Precios actualizados
       </span>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white">
+      <h2 class="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-white">
         Tarifas por kilo
       </h2>
-      <p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
-        Precios referenciales actualizados. La cotización final depende de la calidad y cantidad del material.
+      <p class="mt-3 sm:mt-4 text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto">
+        Precios referenciales. Cotización final según calidad y cantidad.
       </p>
     </div>
 
-    <!-- Table (Glass panel) -->
-    <div class="backdrop-blur-md bg-white/[0.03] border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-      <!-- Table header -->
-      <div class="hidden md:grid md:grid-cols-12 gap-4 px-6 py-4 bg-white/[0.03] border-b border-white/5 text-xs font-semibold tracking-widest uppercase text-slate-400">
-        <div class="col-span-4">Material</div>
-        <div class="col-span-2 text-right">Precio/kg</div>
-        <div class="col-span-2 text-center">Tendencia</div>
-        <div class="col-span-4 text-right">Acción</div>
-      </div>
-
-      <!-- Rows -->
-      {prices.map((item, index) => {
+    <!-- 3 Featured materials - compact on mobile -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+      {featured.map((item) => {
         const trend = getTrendIcon(item.trend);
         const waLink = createWhatsAppLink(item.name, "", "Concepción");
         return (
-          <div
-            class:list={[
-              "grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 items-center px-6 py-5 transition-colors hover:bg-white/[0.03]",
-              index < prices.length - 1 && "border-b border-white/5",
-            ]}
-          >
-            <div class="md:col-span-4">
-              <p class="font-semibold text-white">{item.name}</p>
-              <p class="text-sm text-slate-400 mt-0.5 md:hidden">{item.description}</p>
+          <div class="group backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/[0.07] hover:border-white/15 transition-all duration-300">
+            <div class="flex items-start justify-between gap-2 mb-2 sm:mb-3">
+              <h3 class="font-display font-bold text-base sm:text-xl text-white">{item.name}</h3>
+              <span class:list={["inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium", trend.color, "bg-white/5"]}>
+                {trend.icon}
+              </span>
             </div>
-            <div class="md:col-span-2 md:text-right">
-              <span class="text-2xl font-bold text-white tabular-nums">
+            <p class="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4 line-clamp-2">{item.description}</p>
+
+            <!-- Price - smaller on mobile -->
+            <div class="flex items-baseline gap-1 mb-4 sm:mb-5">
+              <span class="text-2xl sm:text-3xl font-extrabold text-white tabular-nums">
                 {formatPrice(item.price)}
               </span>
-              <span class="text-sm text-slate-400 ml-1">/{item.unit}</span>
+              <span class="text-sm text-slate-400">/{item.unit}</span>
             </div>
-            <div class="md:col-span-2 md:text-center">
-              <span class:list={["inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-medium", trend.color, "bg-white/5"]}>
-                <span class="text-base">{trend.icon}</span>
-                {trend.label}
-              </span>
-            </div>
-            <div class="md:col-span-4 md:text-right mt-2 md:mt-0">
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-green/10 border border-brand-green/20 text-brand-green hover:bg-brand-green hover:text-white font-semibold text-sm rounded-full transition-all duration-200"
-              >
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                </svg>
-                Vender {item.name.split(" ")[0]}
-              </a>
-            </div>
+
+            <!-- WhatsApp CTA -->
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 w-full px-4 py-2.5 sm:py-3 bg-brand-green/10 border border-brand-green/20 text-brand-green hover:bg-brand-green hover:text-white font-semibold text-xs sm:text-sm rounded-xl transition-all duration-200"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              </svg>
+              Cotizar venta
+            </a>
           </div>
         );
       })}
     </div>
 
+    <!-- Ver todos los precios link -->
+    <div class="text-center mt-8 sm:mt-10">
+      <a
+        href="/tarifas"
+        class="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 backdrop-blur-md bg-white/5 border border-white/10 text-white font-semibold text-sm sm:text-base rounded-full hover:bg-white/10 transition-all duration-200"
+      >
+        Ver todos los precios
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+
     <!-- Disclaimer -->
-    <p class="mt-6 text-center text-sm text-slate-500">
-      * Precios referenciales en pesos chilenos (CLP). Válidos para Concepción y alrededores.
-      Última actualización: Febrero 2026.
+    <p class="mt-5 sm:mt-6 text-center text-xs text-slate-500">
+      * Precios referenciales en pesos chilenos (CLP). Última actualización: {priceData.lastUpdated}.
     </p>
   </div>
 </section>
