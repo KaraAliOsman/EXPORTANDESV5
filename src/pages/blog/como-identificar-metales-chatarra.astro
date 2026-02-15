@@ -1,0 +1,77 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "Como identificar metales en tu chatarra: Guia con imagenes | Exportandes",
+    description: "Guía visual para identificar cobre, aluminio, bronce, latón, acero inoxidable e hierro. Color, peso, imán y otras pruebas prácticas.",
+    keywords: ["identificar metales chatarra", "cobre aluminio bronce", "diferenciar metales", "chatarra tipos Chile"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-brand-teal hover:underline transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=60&auto=format"
+          alt="Identificar metales en chatarra"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2b3a42]/90 via-[#374750]/70 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">
+            Como identificar metales en tu chatarra: Guia con imagenes
+          </h1>
+          <div class="flex gap-4 text-sm text-white/80">
+            <span>15 noviembre 2025</span>
+            <span>•</span>
+            <span>6 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Antes de vender tu chatarra, es útil saber qué metales tienes. Cada uno tiene un precio distinto: el cobre paga más que el aluminio; el bronce más que el fierro. Identificar el material te ayuda a separarlo bien, obtener mejor cotización y evitar confusiones. Aquí te dejamos una guía práctica basada en color, peso, prueba del imán y aspecto superficial.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cobre</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El cobre puro es de color rojizo o rosado, brillante si está limpio, oscuro o verdoso si está oxidado. Es relativamente pesado y no es magnético. Lo encuentras en cables, tuberías, motores eléctricos, radiadores. El cobre "milberry" (cable pelado) paga el mejor precio; el oxidado o con impurezas algo menos.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Aluminio</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El aluminio es plateado, gris claro o blanquecino, ligero y no magnético. Ventanas, marcos, latas, perfiles, cables de baja tensión. Hay distintos grados: aluminio de ventana, aluminio de perfil extruido, aluminio laminado. Cuanto más puro y limpio, mejor precio.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Bronce y latón</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El bronce suele ser más oscuro, entre cobrizo y marrón; el latón más amarillo o dorado. Ambos son aleaciones de cobre con estaño o zinc. No son magnéticos. Grifería, llaves, partes de motores, campanas. El bronce colorado (con más cobre) suele pagar mejor que el amarillo.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Acero inoxidable e hierro</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El acero inoxidable es plateado, brillante, resistente a la corrosión y generalmente no magnético (o débilmente magnético según el tipo). En cambio, el fierro y el acero común son magnéticos: un imán se pega fuerte. El fierro suele verse oxidado, gris o negro. El inoxidable paga más que el fierro común. Si tienes dudas al clasificar, un comprador serio te puede ayudar. En Exportandes clasificamos el material al pesarlo y te damos el precio correspondiente. <a href={url("vender")} class="text-brand-teal hover:underline font-medium">Cotiza tu chatarra aquí</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "¿Donde vender chatarra en Concepcion? Mejores opciones 2026 | Exportandes",
+    description: "Guía completa para vender chatarra en Concepción. Opciones, qué buscar en un comprador certificado y por qué elegir compradores serios en la Región del Biobío.",
+    keywords: ["vender chatarra Concepcion", "donde vender chatarra Biobio", "comprador chatarra Concepción", "chatarra Región Biobío"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-brand-teal hover:underline transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=60&auto=format"
+          alt="Vender chatarra en Concepción"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2b3a42]/90 via-[#374750]/70 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">
+            ¿Donde vender chatarra en Concepcion? Mejores opciones 2026
+          </h1>
+          <div class="flex gap-4 text-sm text-white/80">
+            <span>28 noviembre 2025</span>
+            <span>•</span>
+            <span>5 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Si vives en Concepción o la Región del Biobío y tienes chatarra para vender —cobre, aluminio, fierro, bronce— es importante saber a quién acudir. Hay diversos puntos de compra: recicladores informales, ferias de antigüedades, o empresas certificadas dedicadas al acopio y reciclaje de metales. Cada opción tiene ventajas y desventajas; conocerlas te ayuda a obtener el mejor precio y a trabajar con compradores responsables.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Opciones para vender chatarra en Concepción</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          En la zona metropolitana de Concepción existen centros de acopio, empresas de reciclaje y compradores que retiran material a domicilio. Las empresas establecidas suelen ofrecer pesaje certificado, precios transparentes según el tipo de metal y pago inmediato. Los compradores informales pueden pagar menos o no garantizar pesaje justo. Si tienes volúmenes importantes, conviene cotizar con varias opciones para comparar.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Qué buscar en un comprador de chatarra</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Un buen comprador debe tener balanza certificada y calibrada para que el pesaje sea correcto. También es fundamental que ofrezca precios acordes al mercado (LME para cobre, referencias locales para fierro y aluminio) y que pague al momento, sin demoras. Verifica que la empresa esté inscrita y con permisos al día, que retiren a domicilio si lo necesitas y que te expliquen cómo clasifican el material para dar el precio adecuado.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Por qué elegir compradores certificados</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Los compradores certificados cumplen normativas ambientales y laborales, lo que garantiza que el material se reciclará de forma responsable. Además, al trabajar con empresas formales reduces riesgos de fraude en el pesaje o en el pago. Si buscas una opción confiable en Concepción y alrededores, puedes <a href={url("vender")} class="text-brand-teal hover:underline font-medium">cotizar tu chatarra con nosotros</a>. En Exportandes operamos en la Región del Biobío con retiro a domicilio, pesaje transparente y pago inmediato.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

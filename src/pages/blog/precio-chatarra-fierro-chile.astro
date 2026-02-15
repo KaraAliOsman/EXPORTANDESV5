@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "Precio de la chatarra de fierro en Chile: Analisis 2026 | Exportandes",
+    description: "Análisis del precio de la chatarra de fierro en Chile. Tipos: pesado, corto, largo, mixto. Factores que influyen en la cotización.",
+    keywords: ["precio chatarra fierro Chile", "chatarra fierro 2026", "vender fierro Chile", "tipos fierro chatarra"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-brand-teal hover:underline transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=60&auto=format"
+          alt="Precio chatarra fierro Chile"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2b3a42]/90 via-[#374750]/70 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">
+            Precio de la chatarra de fierro en Chile: Analisis 2026
+          </h1>
+          <div class="flex gap-4 text-sm text-white/80">
+            <span>10 noviembre 2025</span>
+            <span>•</span>
+            <span>5 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          La chatarra de fierro es uno de los materiales más comunes en el reciclaje metálico. Aunque su valor por kilo es menor que el del cobre o el aluminio, en volumen puede representar un ingreso relevante para constructoras, talleres, industrias y particulares. El precio en Chile depende del tipo de fierro, del mercado internacional y de la demanda local. Conocer los distintos tipos y factores que influyen en la cotización te ayuda a vender en mejor momento.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Tipos de chatarra de fierro en Chile</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Se distingue entre fierro pesado (vigas, estructuras gruesas, maquinaria), fierro corto (recortes, pedazos pequeños), fierro largo (barras, perfiles, tubos) y fierro mixto (mezcla de calibres y formas). El fierro pesado y estructural suele pagar mejor porque es más fácil de procesar y fundir. El mixto con mucha oxidación o restos de hormigón puede recibir un precio más bajo.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Factores que afectan el precio</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El precio del fierro en Chile sigue tendencias internacionales (China, mercados de metales). El tipo de cambio peso-dólar influye porque las exportaciones se cotizan en dólares. La oferta local de chatarra y la demanda de las acerías también determinan la cotización. En períodos de alta actividad constructiva o industrial, la demanda sube; en recesión, puede bajar. La limpieza del material (sin plástico, goma ni hormigón) mejora el precio.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cómo obtener una buena cotización</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Separa el fierro de otros metales cuando sea posible. Evita mezclar con cobre, aluminio o materiales no ferrosos, ya que eso puede complicar el pesaje y la clasificación. Si tienes volúmenes grandes, cotiza con compradores que tengan balanza certificada y retiro a domicilio. En Exportandes compramos fierro en Concepción y Biobío con precios transparentes. <a href={url("vender")} class="text-brand-teal hover:underline font-medium">Cotiza tu chatarra aquí</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>

@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SectionCTA from "@/components/SectionCTA.astro";
+import { url } from "@/utils/paths";
+---
+
+<Layout
+  seo={{
+    title: "Bronce: Tipos, precios y como venderlo en Chile | Exportandes",
+    description: "Tipos de bronce (colorado, amarillo), fuentes comunes, precios actuales y cómo vender bronce en Chile con el mejor retorno.",
+    keywords: ["bronce tipos", "vender bronce Chile", "precio bronce", "bronce colorado amarillo"],
+    ogType: "article",
+    ogImage: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=60&auto=format",
+  }}
+>
+  <section class="pt-24 pb-12 min-h-screen bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a
+        href={url("blog")}
+        class="inline-flex items-center gap-2 text-sm text-brand-teal hover:underline transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Volver al blog
+      </a>
+
+      <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
+        <img
+          src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=60&auto=format"
+          alt="Bronce tipos y precios"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2b3a42]/90 via-[#374750]/70 to-transparent" />
+        <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">
+            Bronce: Tipos, precios y como venderlo en Chile
+          </h1>
+          <div class="flex gap-4 text-sm text-white/80">
+            <span>20 octubre 2025</span>
+            <span>•</span>
+            <span>4 min de lectura</span>
+          </div>
+        </div>
+      </div>
+
+      <article class="max-w-3xl mx-auto">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          El bronce es una aleación de cobre con estaño (y a veces otros metales como zinc o aluminio). Se usa en grifería, campanas, piezas de motores, instrumentos musicales y arte. A diferencia del latón (cobre con zinc), el bronce suele tener un tono más cobrizo o marrón. En Chile hay compradores que pagan bien por bronce limpio y bien clasificado. Conocer los tipos y fuentes habituales te ayuda a vender al mejor precio.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Bronce colorado y bronce amarillo</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          El bronce colorado tiene mayor porcentaje de cobre, por eso su color es más rojizo o marrón. Suele pagar mejor porque el contenido de cobre es alto. El bronce amarillo —a veces confundido con latón— tiene más zinc y es más amarillo o dorado. Ambos se reciclan; la diferencia de precio depende de la composición y del comprador. Si tienes dudas, un comprador serio puede clasificarlo al momento del pesaje.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Fuentes comunes de bronce</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Encontrarás bronce en grifos, llaves de paso, campanas, bujes y cojinetes de motores, instrumentos musicales (platillos, bombos), esculturas y piezas decorativas. En demoliciones y desguaces pueden salir cantidades interesantes. Limpia el material de plásticos, gomas o restos de otros metales para que el comprador pueda cotizar correctamente.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Cómo vender bronce en Chile</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Los precios del bronce siguen tendencias del cobre en el mercado internacional. Cotiza con compradores que tengan balanza certificada y que ofrezcan pago inmediato. Separa el bronce de otros metales cuando sea posible. Si tienes bronce para vender en Concepción o Biobío, <a href={url("vender")} class="text-brand-teal hover:underline font-medium">puedes cotizar con Exportandes</a>. Evaluamos el material y te damos el precio según tipo y cantidad.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <SectionCTA />
+</Layout>
