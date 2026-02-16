@@ -44,7 +44,7 @@ const ogImage = seo.ogImage ?? `${SITE.url}/og-image.jpg`;
     <script type="application/ld+json" set:html={JSON.stringify(getLocalBusinessSchema())} />
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   </head>
-  <body class="min-h-screen bg-brand-ice text-gray-900 font-sans antialiased overflow-x-hidden">
+  <body class="min-h-screen bg-white text-gray-900 font-sans antialiased overflow-x-hidden">
     <Navbar />
     <main><slot /></main>
     <Footer />
