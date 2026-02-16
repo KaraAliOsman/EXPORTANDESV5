@@ -1,7 +1,7 @@
 ---
 import { url } from "@/utils/paths";
 interface Props { title: string; subtitle: string; ctaText?: string; ctaHref?: string; image?: string; }
-const { title, subtitle, ctaText = "Cotizar ahora", ctaHref = url("vender"), image = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80&auto=format" } = Astro.props;
+const { title, subtitle, ctaText = "Cotizar ahora", ctaHref = url("vender"), image = "src\assets\hero (1).webp" } = Astro.props;
 ---
 
 <section class="relative min-h-[85vh] sm:min-h-[90vh] flex items-center overflow-hidden">
@@ -14,7 +14,7 @@ const { title, subtitle, ctaText = "Cotizar ahora", ctaHref = url("vender"), ima
     <div class="max-w-xl">
       <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-teal/10 border border-brand-teal/30 rounded-full text-xs font-medium text-brand-teal mb-6">
         <span class="w-1.5 h-1.5 bg-brand-teal rounded-full animate-pulse"></span>
-        Concepcion &amp; Biobio — Retiro a domicilio
+        Retiro gratis · Pago al instante
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.08] tracking-tight">{title}</h1>
