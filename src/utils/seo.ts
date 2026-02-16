@@ -22,8 +22,11 @@ export const SITE = {
     postalCode: "4030000",
   },
   social: {
-    instagram: "https://instagram.com/exportandes",
-    facebook: "https://facebook.com/exportandes",
+    facebook: "https://www.facebook.com/exportandes",
+    instagram: "https://www.instagram.com/exportandes",
+    youtube: "https://www.youtube.com/@exportandes",
+    linkedin: "https://www.linkedin.com/company/exportandes",
+    twitter: "https://twitter.com/exportandes",
   },
 };
 
@@ -64,7 +67,7 @@ export const getLocalBusinessSchema = () => ({
   ],
   "priceRange": "$$",
   "image": `${SITE.url}/og-image.jpg`,
-  "sameAs": [SITE.social.instagram, SITE.social.facebook],
+  "sameAs": [SITE.social.facebook, SITE.social.instagram, SITE.social.youtube, SITE.social.linkedin, SITE.social.twitter],
 });
 
 export const getProductSchema = (name: string, price: number, description: string) => ({
