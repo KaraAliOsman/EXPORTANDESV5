@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
 import { url } from "@/utils/paths";
+import imgMedioambiente from "@/assets/medioambiente.jpg";
 ---
 
 <Layout
@@ -10,7 +11,7 @@ import { url } from "@/utils/paths";
     description: "Normativa chilena para el reciclaje de metales. Acta de procedencia, requisitos legales y documentación necesaria para compra-venta de chatarra.",
     keywords: ["reciclaje metales Chile", "acta de procedencia", "regulaciones chatarra", "normativa metales Chile", "documentación reciclaje"],
     ogType: "article",
-    ogImage: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1200&q=60&auto=format",
+    ogImage: new URL(imgMedioambiente.src, import.meta.env.SITE).href,
   }}
 >
   <section class="pt-24 pb-12 min-h-screen bg-white">
@@ -27,7 +28,7 @@ import { url } from "@/utils/paths";
 
       <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
         <img
-          src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1200&q=60&auto=format"
+          src={imgMedioambiente.src}
           alt="Reciclaje de metales en Chile"
           class="absolute inset-0 w-full h-full object-cover"
           loading="eager"

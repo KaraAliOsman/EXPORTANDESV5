@@ -1,12 +1,13 @@
 ---
 import { createGeneralWhatsAppLink } from "@/utils/whatsapp";
 import { url } from "@/utils/paths";
+import sectionCtaImage from "@/assets/SectionCta.webp";
 const waLink = createGeneralWhatsAppLink();
 ---
 
 <section class="relative overflow-hidden">
   <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=70&auto=format" alt="" class="w-full h-full object-cover" loading="lazy"/>
+    <img src={sectionCtaImage.src} alt="" class="w-full h-full object-cover" loading="lazy"/>
     <div class="absolute inset-0 bg-gradient-to-r from-[#2b3a42]/92 via-[#374750]/85 to-[#374750]/65"></div>
   </div>
   <div class="relative max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 text-center">

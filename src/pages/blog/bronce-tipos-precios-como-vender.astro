@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
 import { url } from "@/utils/paths";
+import imgBronce from "@/assets/images (1).jpg";
 ---
 
 <Layout
@@ -10,7 +11,7 @@ import { url } from "@/utils/paths";
     description: "Tipos de bronce (colorado, amarillo), fuentes comunes, precios actuales y cómo vender bronce en Chile con el mejor retorno.",
     keywords: ["bronce tipos", "vender bronce Chile", "precio bronce", "bronce colorado amarillo"],
     ogType: "article",
-    ogImage: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=60&auto=format",
+    ogImage: new URL(imgBronce.src, import.meta.env.SITE).href,
   }}
 >
   <section class="pt-24 pb-12 min-h-screen bg-white">
@@ -27,7 +28,7 @@ import { url } from "@/utils/paths";
 
       <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
         <img
-          src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1200&q=60&auto=format"
+          src={imgBronce.src}
           alt="Bronce tipos y precios"
           class="absolute inset-0 w-full h-full object-cover"
           loading="eager"

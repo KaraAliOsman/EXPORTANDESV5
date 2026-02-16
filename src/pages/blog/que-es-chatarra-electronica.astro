@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
 import { url } from "@/utils/paths";
+import imgCobre from "@/assets/cobre.webp";
 ---
 
 <Layout
@@ -10,7 +11,7 @@ import { url } from "@/utils/paths";
     description: "Conoce los tipos de chatarra electrónica, qué metales se pueden recuperar y cómo venderla correctamente. Guía completa de reciclaje de e-waste en Chile.",
     keywords: ["chatarra electrónica", "e-waste", "reciclaje electrónicos", "metales recuperables", "vender chatarra electrónica"],
     ogType: "article",
-    ogImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format",
+    ogImage: new URL(imgCobre.src, import.meta.env.SITE).href,
   }}
 >
   <section class="pt-24 pb-12 min-h-screen bg-white">
@@ -28,7 +29,7 @@ import { url } from "@/utils/paths";
       <!-- Hero -->
       <div class="relative min-h-[280px] sm:min-h-[320px] rounded-2xl overflow-hidden mb-12">
         <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format"
+          src={imgCobre.src}
           alt="Chatarra electrónica y reciclaje"
           class="absolute inset-0 w-full h-full object-cover"
           loading="eager"

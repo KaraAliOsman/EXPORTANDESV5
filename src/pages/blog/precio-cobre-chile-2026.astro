@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import SectionCTA from "@/components/SectionCTA.astro";
 import { url } from "@/utils/paths";
+import imgCobre from "@/assets/cobre.webp";
 ---
 
 <Layout
@@ -10,7 +11,7 @@ import { url } from "@/utils/paths";
     description: "Análisis actualizado del precio del cobre por kilo en Chile. Factores que influyen (LME, USD/CLP), tipos de cobre (pelado vs mixto) y cómo obtener la mejor cotización.",
     keywords: ["precio cobre Chile 2026", "cuánto vale kilo cobre", "cobre pelado precio", "cobre mixto", "vender cobre Concepción"],
     ogType: "article",
-    ogImage: "https://images.unsplash.com/photo-1605557202138-f778ef9ebf96?w=1200&q=60&auto=format",
+    ogImage: new URL(imgCobre.src, import.meta.env.SITE).href,
   }}
 >
   <section class="pt-32 pb-16 min-h-screen bg-white">
@@ -29,7 +30,7 @@ import { url } from "@/utils/paths";
       <!-- Hero image -->
       <div class="relative rounded-2xl overflow-hidden mb-10">
         <img
-          src="https://images.unsplash.com/photo-1605557202138-f778ef9ebf96?w=1200&q=60&auto=format"
+          src={imgCobre.src}
           alt="Cobre y cables de cobre para reciclar"
           class="w-full h-64 sm:h-80 object-cover"
           loading="eager"
