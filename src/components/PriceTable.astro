@@ -6,12 +6,12 @@ const allItems = priceData.categories.flatMap((c) => c.items);
 const featured = priceData.featured.map((id) => allItems.find((i) => i.id === id)).filter(Boolean) as typeof allItems;
 ---
 
-<section class="py-16 sm:py-24 bg-gray-50">
+<section class="py-16 sm:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
       <div>
         <p class="text-sm font-semibold text-brand-teal mb-1">Precios actualizados</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Tarifas por kilo</h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Tarifas por kilo</h2>
       </div>
       <a href={url("tarifas")} class="text-sm font-medium text-brand-teal hover:text-brand-navy transition-colors">
         Ver todos los precios &rarr;
@@ -19,20 +19,21 @@ const featured = priceData.featured.map((id) => allItems.find((i) => i.id === id
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-      {featured.map((item) => {
+      {featured.map((item, i) => {
         const trend = getTrendIcon(item.trend);
         const waLink = createWhatsAppLink(item.name, "", "Concepcion");
+        const cardBorder = i === 0 ? "border-l-4 border-l-brand-teal" : i === 1 ? "border-l-4 border-l-brand-slate" : "border-l-4 border-l-brand-navy";
         return (
-          <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class={`bg-brand-ice/50 rounded-2xl border border-brand-slate/20 p-6 shadow-sm hover:shadow-md transition-shadow ${cardBorder}`}>
             <div class="flex items-center justify-between mb-4">
-              <h3 class="font-bold text-gray-900">{item.name}</h3>
+              <h3 class="font-bold text-brand-navy">{item.name}</h3>
               <span class:list={["text-xs font-medium px-2 py-0.5 rounded-full",
                 item.trend === "up" ? "bg-green-50 text-green-700" :
                 item.trend === "down" ? "bg-red-50 text-red-600" : "bg-gray-100 text-gray-500"
               ]}>{trend.icon} {trend.label}</span>
             </div>
             <p class="text-xs text-gray-400 mb-3">{item.description}</p>
-            <p class="text-3xl font-extrabold text-gray-900 mb-1">{formatPrice(item.price)}</p>
+            <p class="text-3xl font-extrabold text-brand-teal mb-1">{formatPrice(item.price)}</p>
             <p class="text-xs text-gray-400 mb-5">por kilogramo</p>
             <a href={waLink} target="_blank" rel="noopener noreferrer"
                class="flex items-center justify-center gap-2 w-full py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-lg transition-colors">
