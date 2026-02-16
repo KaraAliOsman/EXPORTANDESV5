@@ -11,168 +11,38 @@ import imgPreparar from "@/assets/preparar.jpg";
 import imgReciclaje from "@/assets/reciclaje.jpg";
 import imgBronce from "@/assets/images (1).jpg";
 import imgRetiro from "@/assets/images.jpg";
+import img1324 from "@/assets/1324.jpg";
+import imgBasura from "@/assets/basura_746x419.jpg";
+import imgReciclarAlum from "@/assets/reciclar-aluminio-cuantas-veces.jpg";
+import imgFierro from "@/assets/fierro.webp";
+import imgImg2 from "@/assets/images (2).jpg";
+import imgImg3 from "@/assets/images (3).jpg";
+import imgImg4 from "@/assets/images (4).jpg";
+import imgHero from "@/assets/hero (1).webp";
+import imgAcero from "@/assets/acero-inoxidable.jpg";
+import imgSectionCta from "@/assets/SectionCta.webp";
 
 const posts = [
-  {
-    slug: "precio-cobre-chile-2026",
-    title: "Precio del Cobre en Chile 2026: ¿Cuanto vale un kilo?",
-    excerpt: "Analisis actualizado del precio del cobre por kilo en Chile. Factores que influyen y como obtener la mejor cotizacion.",
-    date: "2026-02-10",
-    image: imgCobre.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "como-limpiar-aluminio-para-vender",
-    title: "Como limpiar aluminio para vender: Guia practica",
-    excerpt: "Tips para preparar tu aluminio antes de vender y obtener un mejor precio por kilo.",
-    date: "2026-02-05",
-    image: imgAluminio.src,
-    readTime: "4 min",
-  },
-  {
-    slug: "chatarra-electronica-que-se-puede-vender",
-    title: "Chatarra electronica: ¿Que se puede vender y a cuanto?",
-    excerpt: "Descubre que componentes electronicos tienen valor como chatarra y cuales contienen metales preciosos.",
-    date: "2026-01-28",
-    image: imgCobre.src,
-    readTime: "6 min",
-  },
-  {
-    slug: "diferencia-cobre-bronce-laton",
-    title: "Diferencia entre Cobre, Bronce y Laton: Guia visual",
-    excerpt: "Aprende a identificar y diferenciar cobre, bronce y laton para clasificar correctamente tu chatarra.",
-    date: "2026-01-20",
-    image: imgTiposCobre.src,
-    readTime: "4 min",
-  },
-  {
-    slug: "que-es-chatarra-electronica",
-    title: "¿Que es la chatarra electronica y como reciclarla?",
-    excerpt: "Todo lo que necesitas saber sobre la chatarra electronica, que metales se pueden recuperar y como venderla.",
-    date: "2026-01-15",
-    image: imgCobre.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "como-vender-chatarra-por-primera-vez",
-    title: "Como vender chatarra por primera vez: Guia completa",
-    excerpt: "Paso a paso para principiantes. Que esperar, que documentos necesitas y como obtener el mejor precio.",
-    date: "2026-01-10",
-    image: imgVendiendo.src,
-    readTime: "6 min",
-  },
-  {
-    slug: "tipos-de-cobre-y-sus-precios",
-    title: "Tipos de cobre y sus precios: Guia para vendedores",
-    excerpt: "Conoce los distintos tipos de cobre (1ra, 2da, 3ra, tubo, cable) y sus diferencias de precio por kilo.",
-    date: "2026-01-05",
-    image: imgTiposCobre.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "reciclaje-metales-chile-regulaciones",
-    title: "Reciclaje de metales en Chile: Regulaciones y documentacion",
-    excerpt: "Conoce las normativas vigentes, el acta de procedencia y los requisitos legales para vender chatarra en Chile.",
-    date: "2025-12-28",
-    image: imgMedioambiente.src,
-    readTime: "7 min",
-  },
-  {
-    slug: "fierro-vs-acero-diferencias",
-    title: "Fierro vs Acero: Diferencias y precios en chatarra",
-    excerpt: "Aprende a distinguir fierro de acero, sus diferencias de precio y cual es mas valioso como chatarra.",
-    date: "2025-12-20",
-    image: imgIronSteel.src,
-    readTime: "4 min",
-  },
-  {
-    slug: "preparar-chatarra-mejor-precio",
-    title: "Como preparar tu chatarra para obtener mejor precio",
-    excerpt: "Consejos practicos para clasificar, limpiar y presentar tu chatarra y maximizar tu ganancia.",
-    date: "2025-12-15",
-    image: imgPreparar.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "mercado-cobre-tendencias-2026",
-    title: "Mercado del cobre en 2026: Tendencias y proyecciones",
-    excerpt: "Analisis del mercado global del cobre, precios LME, el rol de Chile y la demanda de vehiculos electricos.",
-    date: "2025-12-10",
-    image: imgCobre.src,
-    readTime: "6 min",
-  },
-  {
-    slug: "beneficios-reciclaje-metales-medio-ambiente",
-    title: "Beneficios del reciclaje de metales para el medio ambiente",
-    excerpt: "Descubre como reciclar metales ahorra energia, reduce emisiones de CO2 y contribuye a la economia circular.",
-    date: "2025-12-05",
-    image: imgMedioambiente.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "donde-vender-chatarra-concepcion",
-    title: "¿Donde vender chatarra en Concepcion? Mejores opciones 2026",
-    excerpt: "Guia de opciones para vender chatarra en Concepción. Qué buscar en un comprador y por qué elegir compradores certificados.",
-    date: "2025-11-28",
-    image: imgVendiendo.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "aluminio-reciclado-usos-industriales",
-    title: "Aluminio reciclado: Usos industriales y valor economico",
-    excerpt: "Cómo se usa el aluminio reciclado en la industria. Valor económico y ahorro energético frente a la minería.",
-    date: "2025-11-20",
-    image: imgAluminio.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "como-identificar-metales-chatarra",
-    title: "Como identificar metales en tu chatarra: Guia con imagenes",
-    excerpt: "Guía visual para identificar cobre, aluminio, bronce, latón, acero inoxidable e hierro por color, peso e imán.",
-    date: "2025-11-15",
-    image: imgPreparar.src,
-    readTime: "6 min",
-  },
-  {
-    slug: "precio-chatarra-fierro-chile",
-    title: "Precio de la chatarra de fierro en Chile: Analisis 2026",
-    excerpt: "Análisis del precio del fierro en Chile. Tipos (pesado, corto, largo, mixto) y factores que influyen en la cotización.",
-    date: "2025-11-10",
-    image: imgIronSteel.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "economia-circular-metales",
-    title: "Economia circular y metales: El futuro del reciclaje en Chile",
-    excerpt: "Economía circular aplicada a los metales. Ley REP y perspectivas hacia un modelo más sostenible en Chile.",
-    date: "2025-11-05",
-    image: imgReciclaje.src,
-    readTime: "6 min",
-  },
-  {
-    slug: "chatarra-de-construccion-que-comprar",
-    title: "Chatarra de construccion: ¿Que metales se pueden vender?",
-    excerpt: "Metales valorizables en demoliciones y obras: fierro, varillas, cobre, aluminio. Qué separar para obtener mejor precio.",
-    date: "2025-10-28",
-    image: imgIronSteel.src,
-    readTime: "5 min",
-  },
-  {
-    slug: "bronce-tipos-precios-como-vender",
-    title: "Bronce: Tipos, precios y como venderlo en Chile",
-    excerpt: "Tipos de bronce (colorado, amarillo), fuentes comunes, precios actuales y cómo vender al mejor precio.",
-    date: "2025-10-20",
-    image: imgBronce.src,
-    readTime: "4 min",
-  },
-  {
-    slug: "retiro-chatarra-domicilio-como-funciona",
-    title: "Retiro de chatarra a domicilio: ¿Como funciona?",
-    excerpt: "Cómo funciona el retiro a domicilio. Cantidades mínimas, programación, qué preparar y servicio Exportandes.",
-    date: "2025-10-15",
-    image: imgRetiro.src,
-    readTime: "4 min",
-  },
+  { slug: "precio-cobre-chile-2026", title: "Precio del Cobre en Chile 2026: ¿Cuanto vale un kilo?", excerpt: "Analisis actualizado del precio del cobre por kilo en Chile. Factores que influyen y como obtener la mejor cotizacion.", date: "2026-02-10", image: imgCobre.src, readTime: "5 min" },
+  { slug: "como-limpiar-aluminio-para-vender", title: "Como limpiar aluminio para vender: Guia practica", excerpt: "Tips para preparar tu aluminio antes de vender y obtener un mejor precio por kilo.", date: "2026-02-05", image: imgAluminio.src, readTime: "4 min" },
+  { slug: "chatarra-electronica-que-se-puede-vender", title: "Chatarra electronica: ¿Que se puede vender y a cuanto?", excerpt: "Descubre que componentes electronicos tienen valor como chatarra y cuales contienen metales preciosos.", date: "2026-01-28", image: imgBasura.src, readTime: "6 min" },
+  { slug: "diferencia-cobre-bronce-laton", title: "Diferencia entre Cobre, Bronce y Laton: Guia visual", excerpt: "Aprende a identificar y diferenciar cobre, bronce y laton para clasificar correctamente tu chatarra.", date: "2026-01-20", image: imgTiposCobre.src, readTime: "4 min" },
+  { slug: "que-es-chatarra-electronica", title: "¿Que es la chatarra electronica y como reciclarla?", excerpt: "Todo lo que necesitas saber sobre la chatarra electronica, que metales se pueden recuperar y como venderla.", date: "2026-01-15", image: img1324.src, readTime: "5 min" },
+  { slug: "como-vender-chatarra-por-primera-vez", title: "Como vender chatarra por primera vez: Guia completa", excerpt: "Paso a paso para principiantes. Que esperar, que documentos necesitas y como obtener el mejor precio.", date: "2026-01-10", image: imgVendiendo.src, readTime: "6 min" },
+  { slug: "tipos-de-cobre-y-sus-precios", title: "Tipos de cobre y sus precios: Guia para vendedores", excerpt: "Conoce los distintos tipos de cobre (1ra, 2da, 3ra, tubo, cable) y sus diferencias de precio por kilo.", date: "2026-01-05", image: imgImg4.src, readTime: "5 min" },
+  { slug: "reciclaje-metales-chile-regulaciones", title: "Reciclaje de metales en Chile: Regulaciones y documentacion", excerpt: "Conoce las normativas vigentes, el acta de procedencia y los requisitos legales para vender chatarra en Chile.", date: "2025-12-28", image: imgMedioambiente.src, readTime: "7 min" },
+  { slug: "fierro-vs-acero-diferencias", title: "Fierro vs Acero: Diferencias y precios en chatarra", excerpt: "Aprende a distinguir fierro de acero, sus diferencias de precio y cual es mas valioso como chatarra.", date: "2025-12-20", image: imgIronSteel.src, readTime: "4 min" },
+  { slug: "preparar-chatarra-mejor-precio", title: "Como preparar tu chatarra para obtener mejor precio", excerpt: "Consejos practicos para clasificar, limpiar y presentar tu chatarra y maximizar tu ganancia.", date: "2025-12-15", image: imgPreparar.src, readTime: "5 min" },
+  { slug: "mercado-cobre-tendencias-2026", title: "Mercado del cobre en 2026: Tendencias y proyecciones", excerpt: "Analisis del mercado global del cobre, precios LME, el rol de Chile y la demanda de vehiculos electricos.", date: "2025-12-10", image: imgReciclarAlum.src, readTime: "6 min" },
+  { slug: "beneficios-reciclaje-metales-medio-ambiente", title: "Beneficios del reciclaje de metales para el medio ambiente", excerpt: "Descubre como reciclar metales ahorra energia, reduce emisiones de CO2 y contribuye a la economia circular.", date: "2025-12-05", image: imgImg2.src, readTime: "5 min" },
+  { slug: "donde-vender-chatarra-concepcion", title: "¿Donde vender chatarra en Concepcion? Mejores opciones 2026", excerpt: "Guia de opciones para vender chatarra en Concepción. Qué buscar en un comprador y por qué elegir compradores certificados.", date: "2025-11-28", image: imgRetiro.src, readTime: "5 min" },
+  { slug: "aluminio-reciclado-usos-industriales", title: "Aluminio reciclado: Usos industriales y valor economico", excerpt: "Cómo se usa el aluminio reciclado en la industria. Valor económico y ahorro energético frente a la minería.", date: "2025-11-20", image: imgSectionCta.src, readTime: "5 min" },
+  { slug: "como-identificar-metales-chatarra", title: "Como identificar metales en tu chatarra: Guia con imagenes", excerpt: "Guía visual para identificar cobre, aluminio, bronce, latón, acero inoxidable e hierro por color, peso e imán.", date: "2025-11-15", image: imgImg3.src, readTime: "6 min" },
+  { slug: "precio-chatarra-fierro-chile", title: "Precio de la chatarra de fierro en Chile: Analisis 2026", excerpt: "Análisis del precio del fierro en Chile. Tipos (pesado, corto, largo, mixto) y factores que influyen en la cotización.", date: "2025-11-10", image: imgFierro.src, readTime: "5 min" },
+  { slug: "economia-circular-metales", title: "Economia circular y metales: El futuro del reciclaje en Chile", excerpt: "Economía circular aplicada a los metales. Ley REP y perspectivas hacia un modelo más sostenible en Chile.", date: "2025-11-05", image: imgReciclaje.src, readTime: "6 min" },
+  { slug: "chatarra-de-construccion-que-comprar", title: "Chatarra de construccion: ¿Que metales se pueden vender?", excerpt: "Metales valorizables en demoliciones y obras: fierro, varillas, cobre, aluminio. Qué separar para obtener mejor precio.", date: "2025-10-28", image: imgHero.src, readTime: "5 min" },
+  { slug: "bronce-tipos-precios-como-vender", title: "Bronce: Tipos, precios y como venderlo en Chile", excerpt: "Tipos de bronce (colorado, amarillo), fuentes comunes, precios actuales y cómo vender al mejor precio.", date: "2025-10-20", image: imgBronce.src, readTime: "4 min" },
+  { slug: "retiro-chatarra-domicilio-como-funciona", title: "Retiro de chatarra a domicilio: ¿Como funciona?", excerpt: "Cómo funciona el retiro a domicilio. Cantidades mínimas, programación, qué preparar y servicio Exportandes.", date: "2025-10-15", image: imgAcero.src, readTime: "4 min" },
 ];
 ---
 

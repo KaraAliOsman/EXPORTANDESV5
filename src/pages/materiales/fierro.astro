@@ -4,7 +4,7 @@ import SectionCTA from "@/components/SectionCTA.astro";
 import priceData from "@/data/prices.json";
 import { createWhatsAppLink, formatPrice, getTrendIcon } from "@/utils/whatsapp";
 import { url } from "@/utils/paths";
-import imgFierroHero from "@/assets/iron-vs-steel.webp";
+import imgFierroHero from "@/assets/fierro.webp";
 import imgFierroEdit from "@/assets/images (3).jpg";
 
 const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.category === "fierro");
