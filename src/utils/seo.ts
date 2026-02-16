@@ -13,7 +13,7 @@ export const SITE = {
   url: "https://exportandes.cl",
   description: "Compramos chatarra de cobre, aluminio y metales al mejor precio en Concepción y Biobío. Retiro gratis, pago inmediato.",
   phone: "+56933301114",
-  email: "contacto@exportandes.cl",
+  email: "exportandescl@gmail.com",
   address: {
     street: "Av. Pedro de Valdivia 733",
     city: "Concepción",
