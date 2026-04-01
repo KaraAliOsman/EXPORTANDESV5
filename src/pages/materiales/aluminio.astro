@@ -12,12 +12,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
 
 <Layout
   seo={{
-    title: "Precio Aluminio por Kilo — Offset, Perfil, Duro, Lata | Exportandes",
-    description: "Precio actualizado del aluminio por kilo en Concepción y Biobío. Aluminio offset, perfil, duro, lata y radiadora.",
-    keywords: ["precio aluminio kilo Chile", "aluminio offset precio", "aluminio perfil precio", "vender aluminio Concepción"],
+    title: "Precio Aluminio por Kilo - Offset, Perfil, Duro, Blando y Latas | Exportandes",
+    description: "Precio actualizado del aluminio por kilo en Concepcion y Biobio. Aluminio offset, perfil, duro, blando y latas.",
+    keywords: ["precio aluminio kilo Chile", "aluminio offset precio", "aluminio perfil precio", "vender aluminio Concepcion"],
   }}
 >
-  <!-- Hero with photo and white gradient overlay -->
   <section class="relative min-h-[60vh] flex items-end">
     <div class="absolute inset-0">
       <img
@@ -34,12 +33,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         Precio del Aluminio
       </h1>
       <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-500 max-w-2xl">
-        Precios referenciales por kilo. El aluminio se clasifica según su pureza y origen: offset (planchas de imprenta), perfil (ventanas y estructuras), duro (piezas gruesas), lata (envases) y radiadora (componentes automotrices).
+        Precios referenciales por kilo. El aluminio se clasifica segun su pureza y origen: offset, perfil, duro, blando y latas de bebidas.
       </p>
     </div>
   </section>
 
-  <!-- Price cards -->
   <section class="relative py-16 sm:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">Tarifas</p>
@@ -47,7 +45,7 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => {
           const trend = getTrendIcon(item.trend);
-          const waLink = createWhatsAppLink(item.name, "", "Concepción");
+          const waLink = createWhatsAppLink(item.name, "", "Concepcion");
           const isConsult = "consultPrice" in item && item.consultPrice;
           return (
             <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 flex flex-col">
@@ -79,11 +77,10 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           );
         })}
       </div>
-      <p class="mt-6 text-xs text-gray-400">Última actualización: {priceData.lastUpdated}</p>
+      <p class="mt-6 text-xs text-gray-400">Ultima actualizacion: {priceData.lastUpdated}</p>
     </div>
   </section>
 
-  <!-- Editorial section with photo -->
   <section class="relative py-16 sm:py-24 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -96,19 +93,18 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         </div>
         <div class="order-1 lg:order-2 py-8 lg:py-0">
           <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">El material</p>
-          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Aluminio: ligero, versátil, infinitamente reciclable</h2>
+          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Aluminio: ligero, versatil, infinitamente reciclable</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            El aluminio es uno de los metales más reciclados del mundo. Casi el 75% del aluminio producido sigue en uso hoy, y reciclarlo consume solo el 5% de la energía necesaria para producir aluminio virgen.
+            El aluminio es uno de los metales mas reciclados del mundo. Casi el 75% del aluminio producido sigue en uso hoy, y reciclarlo consume solo el 5% de la energia necesaria para producir aluminio virgen.
           </p>
           <p class="text-gray-500 leading-relaxed">
-            Desde planchas offset de imprenta hasta perfiles de ventanería y latas de bebidas, cada kilo de aluminio que reciclas contribuye a una cadena de suministro más sostenible.
+            Desde planchas offset de imprenta hasta perfiles, aluminio blando y latas de bebidas, cada kilo de aluminio que reciclas contribuye a una cadena de suministro mas sostenible.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Back link -->
   <section class="py-8 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <a

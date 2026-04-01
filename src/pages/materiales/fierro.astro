@@ -12,12 +12,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
 
 <Layout
   seo={{
-    title: "Precio Fierro y Chatarra por Kilo — Pesado, Corto, Largo, Mixto | Exportandes",
-    description: "Precio actualizado del fierro por kilo. Fierro pesado, corto, largo, mixto, fundido y viruta en Concepción.",
-    keywords: ["precio fierro kilo Chile", "vender fierro Concepción", "chatarra fierro precio"],
+    title: "Precio Fierro y Chatarra por Kilo - Corto, Largo y Lata | Exportandes",
+    description: "Precio actualizado del fierro por kilo en Concepcion. Fierro corto, fierro largo y lata chatarra.",
+    keywords: ["precio fierro kilo Chile", "vender fierro Concepcion", "chatarra fierro precio"],
   }}
 >
-  <!-- Hero with photo and white gradient overlay -->
   <section class="relative min-h-[60vh] flex items-end">
     <div class="absolute inset-0">
       <img
@@ -34,12 +33,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         Precio del Fierro
       </h1>
       <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-500 max-w-2xl">
-        Precios referenciales por kilo. Cotización final sujeta a inspección y calidad del material.
+        Precios referenciales por kilo. Cotizacion final sujeta a inspeccion y calidad del material.
       </p>
     </div>
   </section>
 
-  <!-- Price cards -->
   <section class="relative py-16 sm:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">Tarifas</p>
@@ -47,7 +45,7 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => {
           const trend = getTrendIcon(item.trend);
-          const waLink = createWhatsAppLink(item.name, "", "Concepción");
+          const waLink = createWhatsAppLink(item.name, "", "Concepcion");
           const isConsult = "consultPrice" in item && item.consultPrice;
           return (
             <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 flex flex-col">
@@ -79,11 +77,10 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           );
         })}
       </div>
-      <p class="mt-6 text-xs text-gray-400">Última actualización: {priceData.lastUpdated}</p>
+      <p class="mt-6 text-xs text-gray-400">Ultima actualizacion: {priceData.lastUpdated}</p>
     </div>
   </section>
 
-  <!-- Editorial section with photo -->
   <section class="relative py-16 sm:py-24 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -96,19 +93,18 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         </div>
         <div class="order-1 lg:order-2 py-8 lg:py-0">
           <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">El material</p>
-          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Fierro y chatarra: el ciclo de la construcción</h2>
+          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Fierro y chatarra: volumen, clasificacion y recuperacion</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            El fierro es el metal más reciclado del mundo. Estructuras demolidas, maquinaria en desuso y residuos industriales vuelven a fundirse para generar acero nuevo, reduciendo emisiones y consumo de recursos.
+            El fierro es uno de los materiales mas reciclados del mundo y sigue siendo clave en construccion, demolicion y residuos industriales.
           </p>
           <p class="text-gray-500 leading-relaxed">
-            Pesado, corto, largo, mixto, fundido o viruta: cada categoría refleja el origen y las condiciones del material. Una correcta clasificación permite maximizar el valor de recuperación en Concepción y Biobío.
+            Separar lata chatarra, fierro corto y fierro largo ayuda a obtener una cotizacion mas clara y ordenada al momento de vender.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Back link -->
   <section class="py-8 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <a

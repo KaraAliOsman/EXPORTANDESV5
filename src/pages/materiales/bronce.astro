@@ -12,12 +12,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
 
 <Layout
   seo={{
-    title: "Precio Bronce por Kilo — Colorado y Amarillo | Exportandes",
-    description: "Precio actualizado del bronce por kilo. Bronce colorado y amarillo en Concepción y Biobío.",
-    keywords: ["precio bronce kilo", "vender bronce Concepción", "bronce colorado precio"],
+    title: "Precio Bronce por Kilo | Exportandes",
+    description: "Precio actualizado del bronce por kilo en Concepcion y Biobio.",
+    keywords: ["precio bronce kilo", "vender bronce Concepcion", "bronce precio"],
   }}
 >
-  <!-- Hero with photo and white gradient overlay -->
   <section class="relative min-h-[60vh] flex items-end">
     <div class="absolute inset-0">
       <img
@@ -34,12 +33,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         Precio del Bronce
       </h1>
       <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-500 max-w-2xl">
-        Precios referenciales por kilo. Cotización final sujeta a inspección y calidad del material.
+        Precios referenciales por kilo. Cotizacion final sujeta a inspeccion y calidad del material.
       </p>
     </div>
   </section>
 
-  <!-- Price cards -->
   <section class="relative py-16 sm:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">Tarifas</p>
@@ -47,7 +45,7 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => {
           const trend = getTrendIcon(item.trend);
-          const waLink = createWhatsAppLink(item.name, "", "Concepción");
+          const waLink = createWhatsAppLink(item.name, "", "Concepcion");
           const isConsult = "consultPrice" in item && item.consultPrice;
           return (
             <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 flex flex-col">
@@ -79,11 +77,10 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           );
         })}
       </div>
-      <p class="mt-6 text-xs text-gray-400">Última actualización: {priceData.lastUpdated}</p>
+      <p class="mt-6 text-xs text-gray-400">Ultima actualizacion: {priceData.lastUpdated}</p>
     </div>
   </section>
 
-  <!-- Editorial section with photo -->
   <section class="relative py-16 sm:py-24 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -96,19 +93,18 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         </div>
         <div class="order-1 lg:order-2 py-8 lg:py-0">
           <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">El material</p>
-          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Bronce: la aleación que marcó la historia</h2>
+          <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Bronce: resistencia y valor de recuperacion</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            El bronce — aleación de cobre y estaño — dio nombre a toda una época. Esculturas, campanas, grifería y piezas industriales aprovechan su resistencia a la corrosión y su capacidad de fundición precisa.
+            El bronce es una aleacion muy valorada en reciclaje por su resistencia, durabilidad y reutilizacion en piezas industriales, griferia y componentes mecanicos.
           </p>
           <p class="text-gray-500 leading-relaxed">
-            Bronce colorado (mayor contenido de cobre) y bronce amarillo (con zinc) tienen distintos usos y valores. Ambos se reciclan íntegramente, conservando propiedades mecánicas y estéticas en nuevas aplicaciones.
+            Cuando el material viene limpio y separado, la cotizacion suele ser mas clara y competitiva para el vendedor.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Back link -->
   <section class="py-8 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <a

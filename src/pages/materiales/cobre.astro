@@ -12,12 +12,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
 
 <Layout
   seo={{
-    title: "Precio Cobre por Kilo — 3ra, Tubo, Calefacción, Radiadora | Exportandes",
-    description: "Precio actualizado del cobre por kilo en Concepción. Cobre 3ra, tubo, calefacción y radiadora.",
-    keywords: ["precio cobre kilo Chile", "vender cobre Concepción", "cobre tubo precio", "cobre calefacción precio"],
+    title: "Precio Cobre por Kilo - Primera, Tercera, Pelillo y Calefont | Exportandes",
+    description: "Precio actualizado del cobre por kilo en Concepcion. Cobre primera, tercera y esmaltado, pelillo, alambre domiciliario y calefont.",
+    keywords: ["precio cobre kilo Chile", "vender cobre Concepcion", "cobre primera precio", "cobre calefont precio"],
   }}
 >
-  <!-- Hero with photo and white gradient overlay -->
   <section class="relative min-h-[60vh] flex items-end">
     <div class="absolute inset-0">
       <img
@@ -34,12 +33,11 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
         Precio del Cobre
       </h1>
       <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-500 max-w-2xl">
-        Precios referenciales por kilo. Cotización final sujeta a inspección y calidad del material.
+        Precios referenciales por kilo. Cotizacion final sujeta a inspeccion y calidad del material.
       </p>
     </div>
   </section>
 
-  <!-- Price cards -->
   <section class="relative py-16 sm:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">Tarifas</p>
@@ -47,7 +45,7 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item) => {
           const trend = getTrendIcon(item.trend);
-          const waLink = createWhatsAppLink(item.name, "", "Concepción");
+          const waLink = createWhatsAppLink(item.name, "", "Concepcion");
           const isConsult = "consultPrice" in item && item.consultPrice;
           return (
             <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 flex flex-col">
@@ -79,11 +77,10 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           );
         })}
       </div>
-      <p class="mt-6 text-xs text-gray-400">Última actualización: {priceData.lastUpdated}</p>
+      <p class="mt-6 text-xs text-gray-400">Ultima actualizacion: {priceData.lastUpdated}</p>
     </div>
   </section>
 
-  <!-- Editorial section with photo -->
   <section class="relative py-16 sm:py-24 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -98,17 +95,16 @@ const items = priceData.categories.flatMap((c) => c.items).filter((i) => i.categ
           <p class="text-xs font-medium tracking-[0.25em] uppercase text-gray-400 mb-3">El material</p>
           <h2 class="font-sans font-black text-2xl sm:text-3xl text-gray-900 mb-6">Cobre: conductor, durable, 100% reciclable</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
-            El cobre fue uno de los primeros metales utilizados por la humanidad — hace más de 10.000 años — y sigue siendo fundamental para la electricidad, la construcción y la industria. Chile es el mayor productor mundial.
+            El cobre sigue siendo fundamental para la electricidad, la construccion y la industria. Su alto valor de recuperacion hace que cada categoria se cotice de forma distinta segun pureza y origen.
           </p>
           <p class="text-gray-500 leading-relaxed">
-            Tuberías, cables, radiadores y componentes de calefacción son fuentes comunes de cobre recuperable. Reciclar cobre mantiene su conductividad intacta y reduce la presión sobre la explotación minera.
+            Cobre primera, tercera y esmaltado, pelillo, alambre domiciliario y calefont son referencias habituales al momento de vender material para reciclaje.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Back link -->
   <section class="py-8 bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <a
